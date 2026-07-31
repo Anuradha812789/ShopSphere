@@ -4,72 +4,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - ShopNova</title>
+  <title>Checkout - ShopNova Pro</title>
+
   <style>
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
-      background: #dbeafe;
+    }
+
+    body {
+      background: linear-gradient(135deg, #dbeafe, #eff6ff, #e0f2fe, #f8fbff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
     }
 
     .checkout-box {
+      width: 100%;
       max-width: 500px;
-      margin: auto;
       background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     h1 {
       text-align: center;
       color: #2563eb;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #1e293b;
     }
 
     input, textarea, select {
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      margin-bottom: 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      outline: none;
+      font-size: 0.95rem;
     }
 
-    button {
+    input:focus, textarea:focus, select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .order-summary {
+      background: #eff6ff;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .order-summary h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .place-order-btn {
       width: 100%;
-      padding: 12px;
-      background: #2563eb;
-      color: white;
+      padding: 14px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .place-order-btn:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-2px);
+    }
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .checkout-box {
+        padding: 22px;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="checkout-box">
-    <h1>💳 Checkout</h1>
+    <h1>💳 Secure Checkout</h1>
 
-    <input type="text" placeholder="Full Name">
-    <input type="text" placeholder="Mobile Number">
-    <textarea placeholder="Delivery Address"></textarea>
+    <div class="order-summary">
+      <h3>📦 Order Summary</h3>
+      <p>Your selected items will be delivered soon after placing the order.</p>
+    </div>
 
-    <select>
+    <label>👤 Full Name</label>
+    <input type="text" id="name" placeholder="Enter your full name" required>
+
+    <label>📱 Mobile Number</label>
+    <input type="text" id="mobile" placeholder="Enter your mobile number" required>
+
+    <label>🏠 Delivery Address</label>
+    <textarea id="address" placeholder="Enter your delivery address" required></textarea>
+
+    <label>💳 Payment Method</label>
+    <select id="payment">
       <option>Cash on Delivery</option>
       <option>UPI Payment</option>
       <option>Credit / Debit Card</option>
     </select>
 
-    <button onclick="placeOrder()">Place Order 🚀</button>
+    <button class="place-order-btn" onclick="placeOrder()">
+      🚀 Place Order
+    </button>
+
+    <a href="cart.html" class="back-btn">⬅️ Back to Cart</a>
   </div>
 
   <script>
     function placeOrder() {
+      const name = document.getElementById('name').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      if (!name || !mobile || !address) {
+        alert('⚠️ Please fill all details before placing the order.');
+        return;
+      }
+
+      // Clear cart after order
       localStorage.removeItem('shopnovaCart');
+
       alert('🎉 Order placed successfully! Thank you for shopping with ShopNova 💙');
-      window.location.href = 'index.html';
+
+      // Return to your live homepage (FIXED 404 ERROR)
+      window.location.href = 'https://Anuradha812789.github.io/ShopSphere/';
     }
   </script>
 
