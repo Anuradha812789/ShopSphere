@@ -30,10 +30,10 @@ https://anuradha812789.github.io/ShopSphere/
 
 ## 🛠 Technologies Used
 
-* **HTML5**
-* **CSS3**
-* **JavaScript**
-* **GitHub Pages**
+* HTML5
+* CSS3
+* JavaScript
+* GitHub Pages
 
 ---
 
@@ -52,16 +52,6 @@ ShopSphere/
 ## 👩‍💼 Founder
 
 **Anuradha** — CEO & Founder of **ShopNova Pro**
-
----
-
-## 🌟 Future Improvements
-
-* Product details pages
-* User login & authentication
-* Real payment gateway integration
-* Order history tracking
-* Dark / Light mode toggle
 
 ---
 
