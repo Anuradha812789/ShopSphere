@@ -1,128 +1,168 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopNova Cart</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #eaf4ff;
-      padding: 20px;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
 
-    .cart-box {
-      max-width: 650px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1 {
-      text-align: center;
-      color: #2563eb;
-      margin-bottom: 20px;
-    }
+    <title>ShopNova Cart</title>
 
-    .item {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid #ddd;
-    }
+    <link rel="stylesheet" href="style.css">
 
-    .total {
-      margin-top: 20px;
-      font-size: 1.3rem;
-      font-weight: bold;
-      text-align: right;
-      color: #1e3a8a;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      margin-top: 15px;
-      padding: 12px;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      color: white;
-      transition: 0.3s;
-    }
-
-    .checkout-btn {
-      background: #2563eb;
-    }
-
-    .checkout-btn:hover {
-      background: #1d4ed8;
-    }
-
-    .home-btn {
-      background: #0ea5e9;
-    }
-
-    .home-btn:hover {
-      background: #0284c7;
-    }
-
-    .empty {
-      text-align: center;
-      color: #64748b;
-      padding: 30px 0;
-    }
-  </style>
 </head>
+
+
 <body>
 
-  <div class="cart-box">
-    <h1>🛒 Your Cart</h1>
 
-    <div id="cartItems"></div>
+<!-- Header -->
 
-    <div class="total" id="cartTotal">Total: ₹0</div>
+<header>
 
-    <!-- FIXED CHECKOUT LINK -->
-    <a href="https://anuradha812789.github.io/ShopSphere/checkout.html" class="btn checkout-btn">
-      💳 Proceed to Checkout
-    </a>
+    <div class="logo">
+        ShopNova
+    </div>
 
-    <a href="https://anuradha812789.github.io/ShopSphere/" class="btn home-btn">
-      🏠 Continue Shopping
-    </a>
-  </div>
 
-  <script>
-    let cart = JSON.parse(localStorage.getItem('shopnovaCart')) || [];
+    <nav>
 
-    let itemsDiv = document.getElementById('cartItems');
-    let total = 0;
+        <a href="index.html">Home</a>
 
-    if (cart.length === 0) {
-      itemsDiv.innerHTML = '<div class="empty">Your cart is empty 💙</div>';
-    } else {
-      cart.forEach(item => {
-        total += item.price;
+        <a href="laptop.html">Products</a>
 
-        itemsDiv.innerHTML += `
-          <div class="item">
-            <span>${item.name}</span>
-            <span>₹${item.price}</span>
-          </div>
-        `;
-      });
-    }
+        <a href="cart.html">Cart 🛒</a>
 
-    document.getElementById('cartTotal').innerText = `Total: ₹${total}`;
-  </script>
+    </nav>
+
+</header>
+
+
+
+
+<!-- Cart Section -->
+
+
+<section class="cart-container">
+
+
+    <h1>
+        Your Shopping Cart 🛒
+    </h1>
+
+
+
+    <div class="cart-item">
+
+
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+        alt="Laptop">
+
+
+
+        <div class="cart-details">
+
+
+            <h2>
+                ShopNova Premium Laptop
+            </h2>
+
+
+            <p>
+                Intel Core i7 | 16GB RAM | 1TB SSD
+            </p>
+
+
+            <h3>
+                ₹89,999
+            </h3>
+
+
+
+            <label>
+                Quantity:
+            </label>
+
+
+            <input type="number" value="1" min="1">
+
+
+
+            <button class="remove-btn">
+                Remove
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Price Summary -->
+
+
+    <div class="cart-summary">
+
+
+        <h2>
+            Price Details
+        </h2>
+
+
+        <p>
+            Product Price:
+            ₹89,999
+        </p>
+
+
+        <p>
+            Delivery:
+            Free
+        </p>
+
+
+
+        <hr>
+
+
+
+        <h2>
+            Total:
+            ₹89,999
+        </h2>
+
+
+
+        <button class="checkout-btn">
+
+            Proceed To Checkout
+
+        </button>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+<footer>
+
+    <p>
+        © 2026 ShopNova. All Rights Reserved.
+    </p>
+
+</footer>
+
+
 
 </body>
+
 </html>
-```
