@@ -1,350 +1,180 @@
-/* =========================
-   E-COMMERCE PRO STYLE CSS
-   Modern Gen-Z UI Design
-========================= */
-
-
-/* Global Reset */
+/* ===============================
+   SHOPNOVA GLOBAL STYLE
+================================ */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", "Poppins", sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 
 body {
-    background: #f5f7fb;
+    background: #f3f4f6;
     color: #1f2937;
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+
+/* ===============================
+   HEADER
+================================ */
 
 
-.navbar {
+header {
 
-    width: 100%;
-    height: 75px;
     background: #111827;
 
+    color: white;
+
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
 
-    padding: 0 7%;
+    align-items: center;
 
-    position: sticky;
-    top:0;
-    z-index:1000;
+    padding: 20px 8%;
 
 }
 
 
 .logo {
 
-    color:white;
-    font-size:28px;
-    font-weight:800;
-    letter-spacing:1px;
+    font-size: 30px;
 
-}
+    font-weight: bold;
 
-
-.logo span {
-
-    color:#38bdf8;
-
-}
-
-
-.nav-links {
-
-    display:flex;
-    gap:30px;
-    list-style:none;
-
-}
-
-
-.nav-links a {
-
-    text-decoration:none;
-    color:white;
-    font-size:16px;
-    transition:.3s;
-
-}
-
-
-.nav-links a:hover {
-
-    color:#38bdf8;
-
-}
-
-
-.cart {
-
-    background:#38bdf8;
-    color:#111827;
-    padding:10px 18px;
-    border-radius:25px;
-    font-weight:700;
+    color: #38bdf8;
 
 }
 
 
 
-/* =========================
- HERO SECTION
-========================= */
+nav a {
 
+    color: white;
 
-.hero {
+    text-decoration: none;
 
-    min-height:80vh;
+    margin-left: 25px;
 
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    padding:50px 8%;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #111827,
-        #2563eb
-    );
-
-    color:white;
+    font-size: 17px;
 
 }
 
 
-.hero-content {
+nav a:hover {
 
-    max-width:550px;
-
-}
-
-
-.hero h1 {
-
-    font-size:55px;
-    line-height:1.2;
-
-}
-
-
-.hero h1 span {
-
-    color:#38bdf8;
-
-}
-
-
-.hero p {
-
-    margin:20px 0;
-
-    font-size:18px;
-
-    color:#e5e7eb;
-
-}
-
-
-.btn {
-
-    display:inline-block;
-
-    padding:14px 30px;
-
-    background:#38bdf8;
-
-    color:#111827;
-
-    border-radius:30px;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    transition:.3s;
-
-}
-
-
-.btn:hover {
-
-    transform:translateY(-5px);
-
-    background:white;
+    color: #38bdf8;
 
 }
 
 
 
-/* Hero Image */
-
-.hero img {
-
-    width:450px;
-
-    animation:float 3s infinite ease-in-out;
-
-}
+/* ===============================
+   LAPTOP PRODUCT PAGE
+================================ */
 
 
-@keyframes float {
+.product-page {
 
-    50% {
+    width: 85%;
 
-        transform:translateY(-20px);
+    margin: 50px auto;
 
-    }
+    background: white;
 
-}
+    display: flex;
 
+    gap: 50px;
 
+    padding: 40px;
 
-/* =========================
- CATEGORY SECTION
-========================= */
+    border-radius: 20px;
 
-
-.section-title {
-
-    text-align:center;
-
-    margin:50px 0;
-
-    font-size:35px;
-
-    font-weight:800;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 
 }
 
 
 
-.categories {
+/* IMAGE SECTION */
 
-    display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
+.product-image {
 
-    gap:25px;
-
-    padding:0 8%;
+    width: 45%;
 
 }
 
 
-
-.category-card {
-
-    background:white;
-
-    padding:30px;
-
-    text-align:center;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-
-.category-card:hover {
-
-    transform:translateY(-10px);
-
-}
-
-
-.category-card i {
-
-    font-size:40px;
-
-    color:#2563eb;
-
-}
-
-
-
-/* =========================
- PRODUCTS
-========================= */
-
-
-.products {
-
-    padding:50px 8%;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:30px;
-
-}
-
-
-
-.product-card {
-
-
-    background:white;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:
-
-    0 10px 25px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-
-.product-card:hover {
-
-    transform:scale(1.03);
-
-}
-
-
-
-.product-card img {
+.product-image img {
 
     width:100%;
 
-    height:250px;
+    height:400px;
 
     object-fit:cover;
 
+    border-radius:20px;
+
 }
 
+
+
+/* DETAILS SECTION */
 
 
 .product-info {
 
-    padding:20px;
+    width:55%;
+
+}
+
+
+
+.product-info h1 {
+
+    font-size:38px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.rating {
+
+    color:#f59e0b;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.product-info h2 {
+
+    font-size:32px;
+
+    color:#16a34a;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.product-info p {
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
 
 }
 
@@ -354,78 +184,143 @@ body {
 
     font-size:22px;
 
-}
-
-
-.price {
-
-    color:#2563eb;
-
-    font-size:22px;
-
-    font-weight:800;
-
-    margin:10px 0;
+    margin-bottom:15px;
 
 }
 
 
 
-.add-cart {
+.product-info ul {
 
-    width:100%;
+    list-style:none;
 
-    padding:12px;
+}
+
+
+
+.product-info li {
+
+    padding:8px 0;
+
+    font-size:17px;
+
+}
+
+
+
+/* ===============================
+   BUTTONS
+================================ */
+
+
+.buttons {
+
+    margin-top:30px;
+
+}
+
+
+
+button {
+
+    padding:15px 30px;
 
     border:none;
 
-    background:#111827;
+    border-radius:8px;
 
-    color:white;
-
-    border-radius:10px;
+    font-size:16px;
 
     cursor:pointer;
 
-    font-size:16px;
+    margin-right:15px;
 
 }
 
 
-.add-cart:hover {
+
+.cart-btn {
+
+    background:#facc15;
+
+    color:#111;
+
+}
+
+
+
+.buy-btn {
 
     background:#2563eb;
 
-}
-
-
-
-/* =========================
- SEARCH BAR
-========================= */
-
-
-.search-box {
-
-    width:400px;
-
-    padding:12px 20px;
-
-    border-radius:30px;
-
-    border:none;
-
-    outline:none;
-
-    font-size:16px;
+    color:white;
 
 }
 
 
 
-/* =========================
- FOOTER
-========================= */
+button:hover {
+
+    opacity:0.85;
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* ===============================
+   EXTRA DETAILS
+================================ */
+
+
+.details {
+
+    width:85%;
+
+    margin:30px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+.details h2 {
+
+    margin-bottom:15px;
+
+}
+
+
+
+.details p {
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.details li {
+
+    padding:8px;
+
+}
+
+
+
+/* ===============================
+   FOOTER
+================================ */
 
 
 footer {
@@ -436,71 +331,87 @@ footer {
 
     text-align:center;
 
-    padding:30px;
-
-    margin-top:50px;
-
-}
-
-
-/* =========================
- MOBILE RESPONSIVE
-========================= */
-
-
-@media(max-width:768px){
-
-
-.navbar{
-
-    flex-direction:column;
-
-    height:auto;
-
     padding:20px;
-
-}
-
-
-.nav-links{
-
-    margin-top:20px;
-
-    gap:15px;
-
-}
-
-
-.hero{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-
-.hero h1{
-
-    font-size:38px;
-
-}
-
-
-.hero img{
-
-    width:300px;
 
     margin-top:40px;
 
 }
 
 
-.search-box{
 
-    width:90%;
+/* ===============================
+   MOBILE DESIGN
+================================ */
+
+
+@media(max-width:768px){
+
+
+header {
+
+    flex-direction:column;
 
 }
 
+
+nav {
+
+    margin-top:15px;
+
+}
+
+
+
+.product-page {
+
+    width:95%;
+
+    flex-direction:column;
+
+    padding:20px;
+
+}
+
+
+
+.product-image,
+.product-info {
+
+    width:100%;
+
+}
+
+
+
+.product-image img {
+
+    height:300px;
+
+}
+
+
+
+.product-info h1 {
+
+    font-size:28px;
+
+}
+
+
+
+button {
+
+    width:100%;
+
+    margin-bottom:15px;
+
+}
+
+
+.details {
+
+    width:95%;
+
+}
 
 }
