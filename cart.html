@@ -1,29 +1,32 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShopNova Cart</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #eaf4ff;
       padding: 20px;
+      margin: 0;
     }
 
     .cart-box {
-      max-width: 600px;
+      max-width: 650px;
       margin: auto;
       background: white;
       padding: 25px;
-      border-radius: 15px;
+      border-radius: 18px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     h1 {
       text-align: center;
       color: #2563eb;
+      margin-bottom: 20px;
     }
 
     .item {
@@ -35,22 +38,45 @@
 
     .total {
       margin-top: 20px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: bold;
       text-align: right;
+      color: #1e3a8a;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      transition: 0.3s;
     }
 
     .checkout-btn {
-      display: block;
-      width: 100%;
-      margin-top: 20px;
-      padding: 12px;
       background: #2563eb;
-      color: white;
+    }
+
+    .checkout-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .home-btn {
+      background: #0ea5e9;
+    }
+
+    .home-btn:hover {
+      background: #0284c7;
+    }
+
+    .empty {
       text-align: center;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
+      color: #64748b;
+      padding: 30px 0;
     }
   </style>
 </head>
@@ -63,7 +89,14 @@
 
     <div class="total" id="cartTotal">Total: ₹0</div>
 
-    <a href="checkout.html" class="checkout-btn">Proceed to Checkout 💳</a>
+    <!-- FIXED CHECKOUT LINK -->
+    <a href="https://anuradha812789.github.io/ShopSphere/checkout.html" class="btn checkout-btn">
+      💳 Proceed to Checkout
+    </a>
+
+    <a href="https://anuradha812789.github.io/ShopSphere/" class="btn home-btn">
+      🏠 Continue Shopping
+    </a>
   </div>
 
   <script>
@@ -72,16 +105,20 @@
     let itemsDiv = document.getElementById('cartItems');
     let total = 0;
 
-    cart.forEach(item => {
-      total += item.price;
+    if (cart.length === 0) {
+      itemsDiv.innerHTML = '<div class="empty">Your cart is empty 💙</div>';
+    } else {
+      cart.forEach(item => {
+        total += item.price;
 
-      itemsDiv.innerHTML += `
-        <div class="item">
-          <span>${item.name}</span>
-          <span>₹${item.price}</span>
-        </div>
-      `;
-    });
+        itemsDiv.innerHTML += `
+          <div class="item">
+            <span>${item.name}</span>
+            <span>₹${item.price}</span>
+          </div>
+        `;
+      });
+    }
 
     document.getElementById('cartTotal').innerText = `Total: ₹${total}`;
   </script>
