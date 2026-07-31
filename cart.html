@@ -1,368 +1,168 @@
-/* ===============================
-   SHOPNOVA CART STYLE
-================================ */
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 
-/* RESET */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+<title>ShopNova Cart</title>
 
+<link rel="stylesheet" href="style.css">
 
+</head>
 
-body{
 
-    background:#eaeded;
+<body>
 
-    color:#111;
 
-}
+<header>
 
+<div class="logo">
+ShopNova
+</div>
 
 
-/* ===============================
-   HEADER
-================================ */
+<nav>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="cart.html">Cart 🛒</a>
+</nav>
 
 
-header{
+</header>
 
-    height:80px;
 
-    background:#131921;
 
-    color:white;
 
-    display:flex;
 
-    justify-content:space-between;
+<div class="cart-title">
 
-    align-items:center;
+<h1>
+Shopping Cart
+</h1>
 
-    padding:0 8%;
+</div>
 
-}
 
 
 
-.logo{
 
-    font-size:32px;
+<section class="cart-page">
 
-    font-weight:bold;
 
-    color:#38bdf8;
 
-}
+<div class="cart-box">
 
 
+<div class="cart-icon">
+🛒
+</div>
 
-nav a{
 
-    color:white;
+<h2>
+Your Cart is Empty
+</h2>
 
-    text-decoration:none;
 
-    margin-left:25px;
+<p>
+Looks like you haven't added anything yet.
+</p>
 
-    font-size:17px;
 
-}
+<a href="products.html">
+Continue Shopping
+</a>
 
 
+</div>
 
-nav a:hover{
 
-    color:#38bdf8;
 
-}
 
 
 
-/* ===============================
-   CART MAIN AREA
-================================ */
+<div class="summary-box">
 
 
-.cart-page{
+<h2>
+Price Details
+</h2>
 
-    width:90%;
 
-    max-width:1200px;
 
-    margin:40px auto;
+<div class="row">
 
-    display:grid;
+<span>
+Price
+</span>
 
-    grid-template-columns:1fr 350px;
+<span>
+₹0
+</span>
 
-    gap:25px;
+</div>
 
-}
 
 
 
-/* ===============================
-   EMPTY CART CARD
-================================ */
+<div class="row">
 
+<span>
+Delivery
+</span>
 
-.empty-cart{
+<span>
+FREE
+</span>
 
-    background:white;
+</div>
 
-    min-height:450px;
 
-    border-radius:10px;
 
-    display:flex;
 
-    flex-direction:column;
+<hr>
 
-    justify-content:center;
 
-    align-items:center;
 
-    text-align:center;
+<div class="total">
 
-    padding:40px;
+<span>
+Total
+</span>
 
-    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+<span>
+₹0
+</span>
 
-}
+</div>
 
 
 
-.cart-icon{
+<button>
+Proceed To Checkout
+</button>
 
-    font-size:90px;
 
-    margin-bottom:20px;
+</div>
 
-}
 
 
 
-.empty-cart h1{
+</section>
 
-    font-size:32px;
 
-    margin-bottom:15px;
 
-}
 
 
+<footer>
 
-.empty-cart p{
+© 2026 ShopNova. All Rights Reserved.
 
-    color:#565959;
+</footer>
 
-    font-size:18px;
 
-}
 
+</body>
 
-
-.shop-btn{
-
-    margin-top:30px;
-
-    padding:14px 45px;
-
-    background:#ffd814;
-
-    color:#111;
-
-    text-decoration:none;
-
-    border-radius:25px;
-
-    font-weight:bold;
-
-}
-
-
-
-.shop-btn:hover{
-
-    background:#f7ca00;
-
-}
-
-
-
-
-
-/* ===============================
-   PRICE DETAILS
-================================ */
-
-
-.price-card{
-
-    background:white;
-
-    padding:30px;
-
-    height:max-content;
-
-    border-radius:10px;
-
-    box-shadow:0 2px 10px rgba(0,0,0,0.15);
-
-}
-
-
-
-.price-card h2{
-
-    font-size:24px;
-
-    margin-bottom:25px;
-
-}
-
-
-
-.price-card div{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    margin:20px 0;
-
-    font-size:17px;
-
-}
-
-
-
-.price-card hr{
-
-    margin:25px 0;
-
-}
-
-
-
-.price-card h3{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    font-size:22px;
-
-}
-
-
-
-.price-card button{
-
-    width:100%;
-
-    margin-top:25px;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:25px;
-
-    background:#ffa41c;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-}
-
-
-
-.price-card button:hover{
-
-    background:#ff8f00;
-
-}
-
-
-
-
-
-/* ===============================
-   FOOTER
-================================ */
-
-
-footer{
-
-    background:#131921;
-
-    color:white;
-
-    text-align:center;
-
-    padding:20px;
-
-    margin-top:40px;
-
-}
-
-
-
-
-
-/* ===============================
-   MOBILE
-================================ */
-
-
-@media(max-width:768px){
-
-
-.cart-page{
-
-    width:95%;
-
-    grid-template-columns:1fr;
-
-}
-
-
-
-header{
-
-    flex-direction:column;
-
-    height:auto;
-
-    padding:20px;
-
-}
-
-
-
-nav{
-
-    margin-top:15px;
-
-}
-
-
-
-.empty-cart{
-
-    min-height:350px;
-
-}
-
-
-
-}
+</html>
