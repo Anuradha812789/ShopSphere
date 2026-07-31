@@ -1,117 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ShopNova Cart</title>
-
-    <link rel="stylesheet" href="style.css">
-
+<title>ShopNova Cart</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-<!-- Header -->
-
 <header>
-
-    <div class="logo">
-        ShopNova
-    </div>
-
+    <div class="logo">ShopNova</div>
 
     <nav>
-
         <a href="index.html">Home</a>
-
-        <a href="laptop.html">Products</a>
-
+        <a href="products.html">Products</a>
         <a href="cart.html">Cart 🛒</a>
-
     </nav>
-
 </header>
 
 
-
-<!-- Cart Section -->
-
-
-<section class="cart-container">
+<section class="cart-page">
 
 
-    <h1>
-        Shopping Cart 🛒
-    </h1>
+<div class="empty-cart">
 
+<div class="cart-icon">
+🛒
+</div>
 
+<h1>Your Cart is Empty</h1>
 
-    <div id="cart-items">
+<p>
+Looks like you haven't added anything yet.
+</p>
 
-        <!-- Products will load here using JavaScript -->
+<a href="products.html" class="shop-btn">
+Continue Shopping
+</a>
 
-    </div>
-
-
-
-    <div class="cart-summary">
-
-
-        <h2>
-            Price Details
-        </h2>
+</div>
 
 
 
-        <p>
-            Total Amount:
-        </p>
+<div class="price-card">
+
+<h2>Price Details</h2>
+
+<div>
+<span>Subtotal</span>
+<span>₹0</span>
+</div>
 
 
-
-        <h2 id="total-price">
-
-            ₹0
-
-        </h2>
+<div>
+<span>Delivery</span>
+<span>Free</span>
+</div>
 
 
-
-        <button class="checkout-btn">
-
-            Proceed To Checkout
-
-        </button>
+<div>
+<span>Discount</span>
+<span>₹0</span>
+</div>
 
 
-    </div>
+<hr>
+
+
+<h3>
+Total Amount
+<span>₹0</span>
+</h3>
+
+
+<button>
+Proceed To Checkout
+</button>
+
+
+</div>
 
 
 </section>
 
 
 
-
 <footer>
 
-    <p>
-        © 2026 ShopNova. All Rights Reserved.
-    </p>
+© 2026 ShopNova. All Rights Reserved.
 
 </footer>
 
 
-
-
-<script src="script.js"></script>
-
-
 </body>
-
 </html>
