@@ -2,17 +2,17 @@
    SHOPNOVA GLOBAL STYLE
 ================================ */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 
-body {
-    background: #f3f4f6;
-    color: #1f2937;
+body{
+    background:#eaeded;
+    color:#111827;
 }
 
 
@@ -21,66 +21,58 @@ body {
    HEADER
 ================================ */
 
+header{
 
-header {
+    background:#111827;
+    color:white;
 
-    background: #111827;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    color: white;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 20px 8%;
+    padding:20px 8%;
 
 }
 
 
-.logo {
+.logo{
 
-    font-size: 30px;
-
-    font-weight: bold;
-
-    color: #38bdf8;
+    font-size:30px;
+    font-weight:bold;
+    color:#38bdf8;
 
 }
 
 
 
-nav a {
+nav a{
 
-    color: white;
-
-    text-decoration: none;
-
-    margin-left: 25px;
-
-    font-size: 17px;
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size:17px;
 
 }
 
 
-nav a:hover {
+nav a:hover{
 
-    color: #38bdf8;
+    color:#38bdf8;
 
 }
+
+
 
 
 
 /* ===============================
-   LAPTOP PRODUCT PAGE
+   PRODUCT PAGE
 ================================ */
 
 
-.product-page {
+.product-page{
 
     width:85%;
-
     margin:50px auto;
 
     background:white;
@@ -99,17 +91,17 @@ nav a:hover {
 
 
 
-.product-image {
+.product-image{
 
     width:45%;
 
 }
 
 
-.product-image img {
+
+.product-image img{
 
     width:100%;
-
     height:400px;
 
     object-fit:cover;
@@ -120,10 +112,7 @@ nav a:hover {
 
 
 
-/* DETAILS SECTION */
-
-
-.product-info {
+.product-info{
 
     width:55%;
 
@@ -131,94 +120,53 @@ nav a:hover {
 
 
 
-.product-info h1 {
+.product-info h1{
 
     font-size:38px;
-
     margin-bottom:15px;
 
 }
 
 
 
-.rating {
+.rating{
 
     color:#f59e0b;
-
     font-size:20px;
 
-    margin-bottom:20px;
-
 }
 
 
 
-.product-info h2 {
-
-    font-size:32px;
+.product-info h2{
 
     color:#16a34a;
+    font-size:32px;
 
-    margin-bottom:20px;
+    margin:20px 0;
 
 }
 
 
 
-.product-info p {
-
-    font-size:17px;
+.product-info p{
 
     line-height:1.7;
-
-    margin-bottom:20px;
-
-}
-
-
-
-.product-info h3 {
-
-    font-size:22px;
-
-    margin-bottom:15px;
-
-}
-
-
-
-.product-info ul {
-
-    list-style:none;
-
-}
-
-
-
-.product-info li {
-
-    padding:8px 0;
-
     font-size:17px;
 
 }
 
 
 
-/* ===============================
-   BUTTONS
-================================ */
+.product-info li{
 
-
-.buttons {
-
-    margin-top:30px;
+    padding:8px;
 
 }
 
 
 
-button {
+button{
 
     padding:15px 30px;
 
@@ -226,27 +174,21 @@ button {
 
     border-radius:8px;
 
-    font-size:16px;
-
     cursor:pointer;
-
-    margin-right:15px;
 
 }
 
 
 
-.cart-btn {
+.cart-btn{
 
     background:#facc15;
 
-    color:#111;
-
 }
 
 
 
-.buy-btn {
+.buy-btn{
 
     background:#2563eb;
 
@@ -256,100 +198,42 @@ button {
 
 
 
-button:hover {
-
-    opacity:0.85;
-
-    transform:scale(1.05);
-
-}
-
 
 
 /* ===============================
-   EXTRA DETAILS
+   SHOPNOVA AMAZON STYLE CART
 ================================ */
 
 
-.details {
+.cart-page{
 
-    width:85%;
 
-    margin:30px auto;
+    max-width:1200px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 350px;
+
+    gap:25px;
+
+    padding:20px;
+
+}
+
+
+
+/* LEFT EMPTY CART */
+
+.empty-cart{
+
 
     background:white;
 
-    padding:35px;
+    min-height:450px;
 
-    border-radius:20px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-
-}
-
-
-
-.details h2 {
-
-    margin-bottom:15px;
-
-}
-
-
-
-.details p {
-
-    line-height:1.8;
-
-    margin-bottom:20px;
-
-}
-
-
-
-.details li {
-
-    padding:8px;
-
-}
-
-
-
-
-
-/* ===============================
-   SHOPNOVA CART PAGE
-================================ */
-
-
-.cart-page {
-
-    width:85%;
-
-    margin:50px auto;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:stretch;
-
-    gap:40px;
-
-}
-
-
-
-/* EMPTY CART */
-
-
-.empty-cart {
-
-    background:white;
-
-    width:60%;
-
-    min-height:420px;
+    border-radius:8px;
 
     display:flex;
 
@@ -361,98 +245,99 @@ button:hover {
 
     text-align:center;
 
-    border-radius:20px;
-
-    padding:40px;
-
-    box-shadow:0 8px 25px rgba(0,0,0,0.12);
-
-}
+    padding:50px;
 
 
-
-.cart-icon {
-
-    font-size:80px;
-
-    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
 
 }
 
 
 
-.empty-cart h1 {
+.cart-icon{
 
-    font-size:32px;
-
-    margin-bottom:15px;
+    font-size:90px;
 
 }
 
 
 
-.empty-cart p {
+.empty-cart h1{
 
-    font-size:18px;
 
-    color:#6b7280;
+    font-size:30px;
 
-    margin-bottom:30px;
+    margin:20px 0;
 
 }
 
 
 
-.shop-btn {
+.empty-cart p{
 
-    background:#2563eb;
-
-    color:white;
-
-    padding:15px 35px;
-
-    border-radius:10px;
-
-    text-decoration:none;
 
     font-size:17px;
 
-}
-
-
-
-.shop-btn:hover {
-
-    background:#1d4ed8;
+    color:#565959;
 
 }
 
 
 
+.shop-btn{
 
 
-/* PRICE DETAILS */
+    margin-top:30px;
 
+    background:#ffd814;
 
-.price-card {
+    color:#111;
 
-    background:white;
-
-    width:35%;
-
-    height:max-content;
-
-    padding:30px;
+    padding:14px 45px;
 
     border-radius:20px;
 
-    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    text-decoration:none;
+
+    font-weight:bold;
 
 }
 
 
 
-.price-card h2 {
+.shop-btn:hover{
+
+    background:#f7ca00;
+
+}
+
+
+
+
+/* RIGHT PRICE BOX */
+
+
+.price-card{
+
+
+    background:white;
+
+    padding:25px;
+
+    height:max-content;
+
+    border-radius:8px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+
+}
+
+
+
+.price-card h2{
+
+
+    font-size:22px;
 
     margin-bottom:25px;
 
@@ -460,7 +345,8 @@ button:hover {
 
 
 
-.price-card div {
+.price-card div{
+
 
     display:flex;
 
@@ -468,49 +354,54 @@ button:hover {
 
     margin:18px 0;
 
-    font-size:17px;
+}
+
+
+
+.price-card hr{
+
+    margin:20px 0;
 
 }
 
 
 
-.price-card hr {
+.price-card h3{
 
-    margin:25px 0;
-
-}
-
-
-
-.price-card h3 {
 
     display:flex;
 
     justify-content:space-between;
 
-    margin-bottom:25px;
+    font-size:20px;
 
 }
 
 
 
-.price-card button {
+.price-card button{
+
 
     width:100%;
 
-    background:#16a34a;
+    margin-top:20px;
 
-    color:white;
+    background:#ffa41c;
 
-    margin:0;
+    color:#111;
+
+    border-radius:20px;
+
+    font-weight:bold;
 
 }
 
 
 
-.price-card button:hover {
+.price-card button:hover{
 
-    background:#15803d;
+
+    background:#ff8f00;
 
 }
 
@@ -519,11 +410,11 @@ button:hover {
 
 
 /* ===============================
-   FOOTER
+ FOOTER
 ================================ */
 
 
-footer {
+footer{
 
     background:#111827;
 
@@ -542,21 +433,22 @@ footer {
 
 
 /* ===============================
-   MOBILE DESIGN
+ MOBILE DESIGN
 ================================ */
 
 
 @media(max-width:768px){
 
 
-header {
+header{
 
     flex-direction:column;
 
 }
 
 
-nav {
+
+nav{
 
     margin-top:15px;
 
@@ -564,20 +456,18 @@ nav {
 
 
 
-.product-page {
+.product-page{
 
     width:95%;
 
     flex-direction:column;
-
-    padding:20px;
 
 }
 
 
 
 .product-image,
-.product-info {
+.product-info{
 
     width:100%;
 
@@ -585,32 +475,10 @@ nav {
 
 
 
-.product-image img {
-
-    height:300px;
-
-}
+.cart-page{
 
 
-
-.product-info h1 {
-
-    font-size:28px;
-
-}
-
-
-
-button {
-
-    width:100%;
-
-    margin-bottom:15px;
-
-}
-
-
-.details {
+    grid-template-columns:1fr;
 
     width:95%;
 
@@ -618,33 +486,27 @@ button {
 
 
 
-/* CART MOBILE */
-
-.cart-page {
-
-    width:95%;
-
-    flex-direction:column;
-
-}
-
-
-
-.empty-cart,
-.price-card {
-
-    width:100%;
-
-}
-
-
-
-.empty-cart {
+.empty-cart{
 
     min-height:350px;
 
 }
 
+
+
+.price-card{
+
+    width:100%;
+
+}
+
+
+
+button{
+
+    width:100%;
+
+}
 
 
 }
