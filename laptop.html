@@ -1,152 +1,163 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium Laptop - ShopNova Pro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    <title>ShopNova Premium Laptop</title>
 
-    body {
-      background: #eef6ff;
-      color: #1e293b;
-    }
-
-    header {
-      background: white;
-      padding: 15px 25px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #2563eb;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
-      align-items: center;
-    }
-
-    .product-image img {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    .product-details h1 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-      color: #0f172a;
-    }
-
-    .price {
-      font-size: 2rem;
-      color: #2563eb;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .description {
-      line-height: 1.7;
-      margin-bottom: 25px;
-      color: #475569;
-    }
-
-    ul {
-      margin-bottom: 25px;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 10px;
-      transition: 0.3s;
-    }
-
-    .cart-btn {
-      background: #2563eb;
-      color: white;
-    }
-
-    .cart-btn:hover {
-      background: #1d4ed8;
-    }
-
-    .home-btn {
-      background: #0ea5e9;
-      color: white;
-    }
-
-    .home-btn:hover {
-      background: #0284c7;
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">💙 ShopNova Pro</div>
-  </header>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            ShopNova
+        </div>
 
-  <div class="container">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Cart 🛒</a>
+        </nav>
+    </header>
 
-    <div class="product-image">
-      <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1200&q=80" alt="Premium Laptop">
-    </div>
 
-    <div class="product-details">
-      <h1>💻 Premium Laptop</h1>
+    <!-- Product Details Section -->
 
-      <div class="price">₹89,999</div>
+    <section class="product-page">
 
-      <p class="description">
-        Experience high-performance computing with the latest Premium Laptop.
-        Perfect for developers, designers, gamers, and professionals who need
-        speed, reliability, and premium build quality.
-      </p>
+        <div class="product-image">
 
-      <h3>✨ Specifications</h3>
-      <ul>
-        <li>Intel Core i7 Processor</li>
-        <li>16GB RAM</li>
-        <li>512GB SSD Storage</li>
-        <li>15.6-inch Full HD Display</li>
-        <li>Backlit Keyboard</li>
-        <li>Long Battery Life</li>
-      </ul>
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+                alt="Premium Laptop">
 
-      <a href="cart.html" class="btn cart-btn">🛒 Go to Cart</a>
+        </div>
 
-      <a href="index.html" class="btn home-btn">🏠 Back to Home</a>
-    </div>
 
-  </div>
+        <div class="product-info">
+
+            <h1>
+                ShopNova Premium Laptop
+            </h1>
+
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐ (4.8/5)
+            </div>
+
+
+            <h2>
+                ₹89,999
+            </h2>
+
+
+            <p>
+                Experience powerful performance with ShopNova Premium Laptop.
+                Built for developers, students, creators and professionals.
+                Ultra-fast performance with premium design.
+            </p>
+
+
+            <h3>
+                Key Highlights
+            </h3>
+
+
+            <ul>
+
+                <li>🚀 Intel Core i7 14th Generation Processor</li>
+
+                <li>⚡ 16GB DDR5 RAM</li>
+
+                <li>💾 1TB NVMe SSD Storage</li>
+
+                <li>🖥️ 15.6 inch 4K Ultra HD Display</li>
+
+                <li>🔋 Up to 12 Hours Battery Backup</li>
+
+                <li>🎮 Dedicated Graphics Card</li>
+
+            </ul>
+
+
+
+            <div class="buttons">
+
+                <button class="cart-btn">
+                    Add to Cart 🛒
+                </button>
+
+
+                <button class="buy-btn">
+                    Buy Now ⚡
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Extra Information -->
+
+    <section class="details">
+
+
+        <h2>
+            Product Description
+        </h2>
+
+
+        <p>
+
+            ShopNova Premium Laptop delivers next-generation speed,
+            professional performance and elegant design.
+            Perfect choice for coding, gaming, office work,
+            video editing and daily productivity.
+
+        </p>
+
+
+
+        <h2>
+            Delivery & Support
+        </h2>
+
+
+        <ul>
+
+            <li>🚚 Free Delivery Available</li>
+
+            <li>🔒 Secure Payment</li>
+
+            <li>↩️ 7 Days Replacement Policy</li>
+
+            <li>📞 24/7 Customer Support</li>
+
+        </ul>
+
+
+    </section>
+
+
+
+    <footer>
+
+        <p>
+            © 2026 ShopNova. All Rights Reserved.
+        </p>
+
+    </footer>
+
 
 </body>
+
 </html>
-```
