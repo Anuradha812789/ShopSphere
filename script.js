@@ -1,72 +1,48 @@
-// =====================================
-// SHOPNOVA E-COMMERCE CART SYSTEM
-// =====================================
+// ================================
+// SHOPSPHERE CART SYSTEM
+// ================================
 
-
-// Get Cart Data
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
+// ================================
+// ADD TO CART
+// ================================
 
 
-// =====================================
-// ADD PRODUCT TO CART (Laptop Page)
-// =====================================
-
-const addCartButton = document.querySelector(".cart-btn");
+let addButton = document.querySelector(".cart-btn");
 
 
-if(addCartButton){
+if(addButton){
 
-
-    addCartButton.addEventListener("click", function(){
-
+    addButton.addEventListener("click", function(){
 
         let product = {
 
-            id: 1,
+            id: "laptop001",
 
-            name: "ShopNova Premium Laptop",
+            name: "ShopSphere Premium Laptop",
 
             price: 89999,
 
-            image:
-            "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+            image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
 
             quantity: 1
 
         };
 
 
+        cart.push(product);
 
-        // Check existing product
 
-        let existingProduct = cart.find(
-            item => item.id === product.id
+        localStorage.setItem(
+            "cart",
+            JSON.stringify(cart)
         );
 
 
-
-        if(existingProduct){
-
-            existingProduct.quantity++;
-
-        }
-
-        else{
-
-            cart.push(product);
-
-        }
-
-
-
-        saveCart();
-
-
-
-        alert("Product added to cart 🛒");
+        alert("Laptop Added To Cart 🛒");
 
 
         window.location.href = "cart.html";
@@ -74,55 +50,23 @@ if(addCartButton){
 
     });
 
-
 }
 
 
 
+// ================================
+// SHOW CART
+// ================================
 
 
-
-// =====================================
-// SAVE CART
-// =====================================
-
-
-function saveCart(){
-
-
-    localStorage.setItem(
-
-        "cart",
-
-        JSON.stringify(cart)
-
-    );
-
-
-}
-
-
-
-
-
-
-// =====================================
-// DISPLAY CART PRODUCTS
-// =====================================
-
-
-const cartItems = document.getElementById("cart-items");
+let cartItems = document.getElementById("cart-items");
 
 
 if(cartItems){
 
-
     displayCart();
 
-
 }
-
-
 
 
 
@@ -132,17 +76,21 @@ function displayCart(){
     cartItems.innerHTML = "";
 
 
+    let total = 0;
 
-    if(cart.length === 0){
+
+    let cartData = JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
 
 
-        cartItems.innerHTML = `
 
-        <h2>
-        Your Cart is Empty 🛒
-        </h2>
+    if(cartData.length === 0){
 
-        `;
+
+        cartItems.innerHTML =
+
+        "<h2>Your Cart is Empty 🛒</h2>";
 
 
         document.getElementById("total-price").innerHTML =
@@ -151,19 +99,11 @@ function displayCart(){
 
         return;
 
-
     }
 
 
 
-
-    let total = 0;
-
-
-
-
-    cart.forEach(function(product){
-
+    cartData.forEach(product => {
 
 
         total += product.price * product.quantity;
@@ -176,53 +116,27 @@ function displayCart(){
         <div class="cart-product">
 
 
-            <img src="${product.image}">
+        <img src="${product.image}" width="150">
 
 
-            <div>
+        <h2>${product.name}</h2>
 
 
-                <h2>
-                ${product.name}
-                </h2>
+        <h3>
+        ₹${product.price}
+        </h3>
 
 
-                <p>
-                Price: ₹${product.price}
-                </p>
+        <p>
+        Quantity: ${product.quantity}
+        </p>
 
 
+        <button onclick="removeProduct('${product.id}')">
 
-                <p>
+        ❌ Remove
 
-                Quantity:
-
-                <button onclick="changeQuantity(${product.id}, -1)">
-                -
-                </button>
-
-
-                ${product.quantity}
-
-
-                <button onclick="changeQuantity(${product.id}, 1)">
-                +
-                </button>
-
-
-                </p>
-
-
-
-                <button onclick="removeProduct(${product.id})">
-
-                ❌ Remove
-
-                </button>
-
-
-
-            </div>
+        </button>
 
 
         </div>
@@ -235,9 +149,7 @@ function displayCart(){
 
 
 
-
     document.getElementById("total-price").innerHTML =
-
     "₹" + total;
 
 
@@ -246,132 +158,34 @@ function displayCart(){
 
 
 
-
-
-
-
-// =====================================
-// CHANGE QUANTITY
-// =====================================
-
-
-function changeQuantity(id, change){
-
-
-
-    let product = cart.find(
-
-        item => item.id === id
-
-    );
-
-
-
-    if(product){
-
-
-        product.quantity += change;
-
-
-
-        if(product.quantity <= 0){
-
-            removeProduct(id);
-
-            return;
-
-        }
-
-
-    }
-
-
-
-    saveCart();
-
-    displayCart();
-
-
-}
-
-
-
-
-
-
-
-// =====================================
+// ================================
 // REMOVE PRODUCT
-// =====================================
+// ================================
 
 
 function removeProduct(id){
 
 
+    let cartData = JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
 
-    cart = cart.filter(
 
+
+    cartData = cartData.filter(
         item => item.id !== id
-
     );
 
 
 
-    saveCart();
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cartData)
+    );
+
 
 
     displayCart();
-
-
-}
-
-
-
-
-
-
-
-// =====================================
-// CHECKOUT BUTTON
-// =====================================
-
-
-const checkoutButton = document.querySelector(".checkout-btn");
-
-
-
-if(checkoutButton){
-
-
-    checkoutButton.addEventListener(
-
-        "click",
-
-        function(){
-
-
-            if(cart.length === 0){
-
-
-                alert("Your cart is empty");
-
-
-            }
-
-            else{
-
-
-                window.location.href="checkout.html";
-
-
-            }
-
-
-
-        }
-
-
-    );
 
 
 }
