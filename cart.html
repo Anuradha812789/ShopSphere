@@ -40,7 +40,6 @@
 
 
 
-
 <!-- Cart Section -->
 
 
@@ -48,61 +47,17 @@
 
 
     <h1>
-        Your Shopping Cart 🛒
+        Shopping Cart 🛒
     </h1>
 
 
 
-    <div class="cart-item">
+    <div id="cart-items">
 
-
-        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
-        alt="Laptop">
-
-
-
-        <div class="cart-details">
-
-
-            <h2>
-                ShopNova Premium Laptop
-            </h2>
-
-
-            <p>
-                Intel Core i7 | 16GB RAM | 1TB SSD
-            </p>
-
-
-            <h3>
-                ₹89,999
-            </h3>
-
-
-
-            <label>
-                Quantity:
-            </label>
-
-
-            <input type="number" value="1" min="1">
-
-
-
-            <button class="remove-btn">
-                Remove
-            </button>
-
-
-        </div>
-
+        <!-- Products will load here using JavaScript -->
 
     </div>
 
-
-
-
-    <!-- Price Summary -->
 
 
     <div class="cart-summary">
@@ -113,26 +68,17 @@
         </h2>
 
 
-        <p>
-            Product Price:
-            ₹89,999
-        </p>
-
 
         <p>
-            Delivery:
-            Free
+            Total Amount:
         </p>
 
 
 
-        <hr>
+        <h2 id="total-price">
 
+            ₹0
 
-
-        <h2>
-            Total:
-            ₹89,999
         </h2>
 
 
@@ -145,7 +91,6 @@
 
 
     </div>
-
 
 
 </section>
@@ -161,6 +106,10 @@
 
 </footer>
 
+
+
+
+<script src="script.js"></script>
 
 
 </body>
