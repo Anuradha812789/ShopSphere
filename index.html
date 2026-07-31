@@ -1,9 +1,9 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShopNova Pro</title>
 
   <style>
@@ -11,43 +11,86 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
     }
 
     body {
       background: linear-gradient(135deg, #dbeafe, #eff6ff, #e0f2fe, #f8fbff);
+      background-size: 400% 400%;
+      animation: bgMove 12s ease infinite;
       color: #1e293b;
+      overflow-x: hidden;
     }
 
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== HEADER ===== */
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      background: white;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 14px 22px;
       z-index: 1000;
+      box-shadow: 0 2px 12px rgba(37,99,235,0.08);
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 14px;
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.9rem;
+      font-weight: 800;
       color: #2563eb;
     }
 
-    .search-box input {
-      padding: 10px 15px;
-      width: 260px;
-      border-radius: 25px;
-      border: 2px solid #93c5fd;
-      outline: none;
+    .logo-heart {
+      font-size: 2rem;
+      animation: pulse 3s infinite;
     }
 
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* ===== SEARCH ===== */
+    .search-box {
+      flex: 1;
+      max-width: 360px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 11px 16px 11px 42px;
+      border: 2px solid #bfdbfe;
+      border-radius: 999px;
+      outline: none;
+      font-size: 0.95rem;
+      background: white;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+    }
+
+    /* ===== BUTTONS ===== */
     .header-buttons {
       display: flex;
       gap: 10px;
@@ -55,216 +98,346 @@
     }
 
     .btn {
-      padding: 10px 16px;
-      border-radius: 10px;
+      padding: 11px 18px;
+      border-radius: 12px;
       border: none;
       text-decoration: none;
       color: white;
-      font-weight: bold;
+      font-weight: 600;
       cursor: pointer;
-      background: #2563eb;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .admin-btn {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    }
+
+    .cart-btn {
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    }
+
+    .contact-btn {
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
     }
 
     .btn:hover {
-      background: #1d4ed8;
+      transform: translateY(-2px) scale(1.03);
     }
 
+    /* ===== HERO ===== */
     .hero {
-      height: 90vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 120px 20px 40px;
-      background: linear-gradient(rgba(37,99,235,0.7), rgba(14,165,233,0.6)),
-        url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 130px 20px 60px;
+      background: linear-gradient(rgba(30,58,138,0.72), rgba(37,99,235,0.62)),
+        url("https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
       color: white;
     }
 
+    .hero-content {
+      max-width: 760px;
+    }
+
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      margin-bottom: 18px;
+      font-weight: 800;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.35);
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .quote {
+      font-size: clamp(1rem, 2.3vw, 1.35rem);
+      margin-bottom: 24px;
+      color: #eff6ff;
+      font-style: italic;
     }
 
-    .products {
+    .founder {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      font-weight: 600;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products-section {
       max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
+      margin: 0 auto;
+      padding: 70px 20px;
     }
 
-    .products h2 {
+    .products-section h2 {
       text-align: center;
-      color: #2563eb;
+      font-size: clamp(2rem, 4vw, 2.5rem);
       margin-bottom: 40px;
-      font-size: 2.2rem;
+      color: #1e3a8a;
     }
 
-    .product-grid {
+    .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      justify-items: center;
     }
 
     .product-card {
-      background: white;
-      border-radius: 15px;
+      width: 100%;
+      max-width: 250px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(219,234,254,0.96));
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      border: 1px solid rgba(191,219,254,0.9);
+      box-shadow: 0 10px 24px rgba(37,99,235,0.1);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
     }
 
     .product-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(37,99,235,0.18);
     }
 
     .product-card img {
       width: 100%;
-      height: 180px;
+      height: 170px;
       object-fit: cover;
     }
 
     .product-info {
-      padding: 15px;
+      padding: 16px;
     }
 
     .product-info h3 {
+      font-size: 1.05rem;
       margin-bottom: 8px;
       color: #0f172a;
     }
 
     .product-info p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #475569;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      line-height: 1.5;
     }
 
     .price {
-      color: #2563eb;
       font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 14px;
     }
+
+    .buy-btn {
+      width: 100%;
+      padding: 11px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #0ea5e9);
+      color: white;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .buy-btn:hover {
+      background: linear-gradient(135deg, #1d4ed8, #0284c7);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-popup {
+      position: fixed;
+      top: 82px;
+      right: 20px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 14px 30px rgba(15,23,42,0.18);
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1200;
+      min-width: 220px;
+    }
+
+    .contact-popup.show {
+      display: flex;
+    }
+
+    .social-link {
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .instagram { background: #e1306c; }
+    .facebook { background: #1877f2; }
+    .whatsapp { background: #25d366; }
 
     footer {
-      background: #1e3a8a;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 26px 18px;
     }
 
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       header {
         justify-content: center;
       }
 
-      .search-box input {
+      .search-box {
+        order: 3;
         width: 100%;
+        max-width: 100%;
       }
 
-      .hero h1 {
-        font-size: 2.2rem;
+      .header-buttons {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 170px;
+      }
+
+      .contact-popup {
+        right: 12px;
+        left: 12px;
+        min-width: auto;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <div class="logo">💙 ShopNova Pro</div>
+    <div class="logo">
+      <span class="logo-heart">💙</span>
+      <span>ShopNova Pro</span>
+    </div>
 
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Search products...">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search laptop, smart watch, headphones...">
     </div>
 
     <div class="header-buttons">
-      <a href="admin/dashboard.html" class="btn">⚙️ Admin</a>
-      <a href="cart.html" class="btn">🛒 Cart</a>
-      <a href="#contact" class="btn">📩 Contact</a>
+      <a href="admin/dashboard.html" class="btn admin-btn">⚙️ Admin Panel</a>
+      <a href="cart.html" class="btn cart-btn">🛒 Cart</a>
+      <button class="btn contact-btn" id="contactBtn">📩 Contact Us</button>
     </div>
   </header>
 
+  <!-- CONTACT POPUP -->
+  <div class="contact-popup" id="contactPopup">
+    <a href="https://instagram.com" target="_blank" class="social-link instagram">📸 Instagram</a>
+    <a href="https://facebook.com" target="_blank" class="social-link facebook">📘 Facebook</a>
+    <a href="https://wa.me/919999999999" target="_blank" class="social-link whatsapp">💬 WhatsApp</a>
+  </div>
+
+  <!-- HERO -->
   <section class="hero">
-    <div>
-      <h1>Welcome to ShopNova Pro</h1>
-      <p>Technology becomes powerful when simplicity meets innovation.</p>
-      <strong>✨ Anuradha — CEO & Founder</strong>
+    <div class="hero-content">
+      <h1>ShopNova Pro</h1>
+      <p class="quote">“Technology becomes powerful when simplicity meets innovation.”</p>
+      <div class="founder">✨ Anuradha — CEO & Founder</div>
     </div>
   </section>
 
-  <section class="products">
+  <!-- PRODUCTS -->
+  <section class="products-section">
     <h2>🔥 Featured Products</h2>
 
-    <div class="product-grid" id="productGrid">
+    <div class="products-grid">
 
-      <div class="product-card" data-name="laptop gaming laptop coding laptop">
+      <div class="product-card" data-name="laptop gaming laptop coding laptop ultrabook">
         <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80" alt="Laptop">
         <div class="product-info">
           <h3>Premium Laptop</h3>
-          <p>Perfect for coding, gaming, and professional work.</p>
+          <p>Perfect for coding, gaming, video editing, and professional productivity.</p>
           <div class="price">₹89,999</div>
-          <button class="btn" onclick="addToCart('Premium Laptop', 89999)">🛒 Add to Cart</button>
+          <button class="buy-btn" onclick="addToCart('Premium Laptop', 89999)">🛒 Add to Cart</button>
         </div>
       </div>
 
-      <div class="product-card" data-name="smart watch smartwatch fitness watch">
+      <div class="product-card" data-name="smart watch smartwatch fitness watch wearable">
         <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" alt="Smart Watch">
         <div class="product-info">
           <h3>Smart Watch X</h3>
-          <p>Track fitness, heart rate, sleep, and notifications.</p>
+          <p>Track fitness, heart rate, sleep, and notifications with a stylish smartwatch.</p>
           <div class="price">₹4,999</div>
-          <button class="btn" onclick="addToCart('Smart Watch X', 4999)">🛒 Add to Cart</button>
+          <button class="buy-btn" onclick="addToCart('Smart Watch X', 4999)">🛒 Add to Cart</button>
         </div>
       </div>
 
-      <div class="product-card" data-name="headphones wireless headphones bluetooth headphones">
+      <div class="product-card" data-name="headphones wireless headphones bluetooth headphones audio headset">
         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80" alt="Headphones">
         <div class="product-info">
           <h3>Wireless Headphones</h3>
-          <p>Premium Bluetooth headphones with deep bass sound.</p>
+          <p>Premium noise-cancelling Bluetooth headphones with deep bass and all-day comfort.</p>
           <div class="price">₹3,499</div>
-          <button class="btn" onclick="addToCart('Wireless Headphones', 3499)">🛒 Add to Cart</button>
+          <button class="buy-btn" onclick="addToCart('Wireless Headphones', 3499)">🛒 Add to Cart</button>
         </div>
       </div>
 
     </div>
   </section>
 
-  <footer id="contact">
+  <footer>
     <p>© 2026 ShopNova Pro • Designed by Anuradha • CEO & Founder</p>
   </footer>
 
   <script>
-    // Search
-    const searchInput = document.getElementById('searchInput');
-    const productCards = document.querySelectorAll('.product-card');
+    // SEARCH
+    const searchInput = document.getElementById("searchInput");
+    const productCards = document.querySelectorAll(".product-card");
 
-    searchInput.addEventListener('input', function() {
-      const value = this.value.toLowerCase();
+    searchInput.addEventListener("input", function () {
+      const value = this.value.toLowerCase().trim();
 
       productCards.forEach(card => {
-        const name = card.getAttribute('data-name').toLowerCase();
-        card.style.display = name.includes(value) ? 'block' : 'none';
+        const keywords = card.getAttribute("data-name").toLowerCase();
+        card.style.display = value === "" || keywords.includes(value) ? "block" : "none";
       });
     });
 
-    // Add To Cart System
+    // CONTACT POPUP
+    const contactBtn = document.getElementById("contactBtn");
+    const contactPopup = document.getElementById("contactPopup");
+
+    contactBtn.addEventListener("click", () => {
+      contactPopup.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!contactBtn.contains(e.target) && !contactPopup.contains(e.target)) {
+        contactPopup.classList.remove("show");
+      }
+    });
+
+    // ADD TO CART SYSTEM
     function addToCart(name, price) {
-      let cart = JSON.parse(localStorage.getItem('shopnovaCart')) || [];
+      let cart = JSON.parse(localStorage.getItem("shopnovaCart")) || [];
 
       cart.push({
         name: name,
         price: price
       });
 
-      localStorage.setItem('shopnovaCart', JSON.stringify(cart));
+      localStorage.setItem("shopnovaCart", JSON.stringify(cart));
 
-      alert(name + ' added to cart 💙');
+      alert(name + " added to cart 💙");
     }
   </script>
 
