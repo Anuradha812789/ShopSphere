@@ -1,6 +1,9 @@
 function addToCart(){
 
-    let product = {
+
+    const product = {
+
+        id:1,
 
         name:"Premium Laptop",
 
@@ -19,6 +22,10 @@ function addToCart(){
     );
 
 
-    alert("Product Added To Cart");
+    alert("Premium Laptop Added To Cart 🛒");
+
+
+    window.location.href="cart.html";
+
 
 }
