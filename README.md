@@ -1,29 +1,68 @@
-shopsphere-ecommerce
 # 💙 ShopNova Pro
 
-A modern responsive e-commerce website built using **HTML, CSS, and JavaScript**.
+A modern **responsive e-commerce website** built with **HTML, CSS, and JavaScript**.
+
+🌐 **Live Website:**
+https://anuradha812789.github.io/ShopSphere/
+
+---
 
 ## ✨ Features
 
-* Responsive mobile + desktop design
-* Sticky professional header
-* Live product search
-* Admin panel button
-* Social media contact popup
-* Product showcase (Laptop, Smart Watch, Headphones)
-* Modern blue UI theme
+* 📱 Responsive **mobile + desktop** design
+* 🔒 Sticky professional header
+* 🔍 Live product search
+* 🛒 Add to Cart system
+* 💳 Checkout page with order form
+* 📩 Contact popup with social media links
+* ⚙️ Admin panel button
+* 🎨 Modern animated blue UI theme
 
-## 🌐 Live Website
+---
 
-**https://Anuradha812789.github.io/ShopSphere/**
+## 🛍 Featured Products
 
-## 👩‍💼 Founder
+* 💻 Premium Laptop
+* ⌚ Smart Watch X
+* 🎧 Wireless Headphones
 
-**Anuradha — CEO & Founder**
+---
 
 ## 🛠 Technologies Used
 
-* HTML5
-* CSS3
-* JavaScript
-* GitHub Pages
+* **HTML5**
+* **CSS3**
+* **JavaScript**
+* **GitHub Pages**
+
+---
+
+## 📂 Project Structure
+
+```
+ShopSphere/
+├── index.html
+├── cart.html
+├── checkout.html
+├── README.md
+```
+
+---
+
+## 👩‍💼 Founder
+
+**Anuradha** — CEO & Founder of **ShopNova Pro**
+
+---
+
+## 🌟 Future Improvements
+
+* Product details pages
+* User login & authentication
+* Real payment gateway integration
+* Order history tracking
+* Dark / Light mode toggle
+
+---
+
+### 💙 Designed and developed by Anuradha
