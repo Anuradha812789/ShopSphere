@@ -3,269 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopNova - Shopping Cart</title>
-  <style>
-    /* Reset & Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background-color: #f3f4f6;
-      color: #1f2937;
-    }
-
-    /* Navbar */
-    header {
-      background-color: #0b1a30;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 5%;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #3b82f6;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
-
-    /* Two-Column Workspace Container */
-    .cart-wrapper {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap; /* Wraps cleanly on mobile devices */
-    }
-
-    /* Left Side: Cart Items Layout Column */
-    .cart-items-section {
-      flex: 2;
-      min-width: 320px;
-    }
-
-    .cart-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      border: 1px solid #e5e7eb;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    /* Medium-sized thumbnail placeholder for your cart item */
-    .item-thumbnail {
-      width: 100px;
-      height: 100px;
-      background-color: #eaeaea;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .item-thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .item-details {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .item-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #111827;
-    }
-
-    .item-price {
-      font-size: 16px;
-      font-weight: 600;
-      color: #059669; /* Emerald Green */
-    }
-
-    /* Quantity & Remove Button row styling */
-    .item-controls {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-top: 4px;
-    }
-
-    .qty-btn {
-      width: 28px;
-      height: 28px;
-      border: 1px solid #d1d5db;
-      background: #fff;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .qty-number {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .remove-btn {
-      background: none;
-      border: none;
-      color: #ef4444; /* Alert Red color */
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .remove-btn:hover {
-      text-decoration: underline;
-    }
-
-    /* Right Side: Attractive Summary Panel Column */
-    .summary-section {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .summary-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border: 1px solid #e5e7eb;
-      position: sticky;
-      top: 20px;
-    }
-
-    .summary-title {
-      font-size: 18px;
-      font-weight: 700;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #f3f4f6;
-      margin-bottom: 15px;
-      color: #111827;
-    }
-
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      font-size: 14px;
-      color: #4b5563;
-    }
-
-    .free-delivery {
-      color: #059669;
-      font-weight: 600;
-    }
-
-    .total-row {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid #f3f4f6;
-      font-size: 18px;
-      font-weight: 700;
-      color: #111827;
-    }
-
-    .checkout-btn {
-      display: block;
-      width: 100%;
-      background-color: #ff9900; /* High-converting checkout orange */
-      color: #ffffff;
-      text-align: center;
-      padding: 14px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      margin-top: 20px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(255, 153, 0, 0.2);
-    }
-
-    .checkout-btn:hover {
-      background-color: #e68a00;
-    }
-  </style>
+  <title>Shopping Cart - ShopNova</title>
 </head>
-<body>
+<body style="margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; color: #1f2937;">
 
-  <!-- Top Navbar Header -->
-  <header>
-    <div class="logo">ShopNova</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Products</a>
-      <a href="#">Cart 🛒</a>
+  <!-- Navigation Header (Matches Home Navbar) -->
+  <header style="background-color: #0b1a30; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <a href="index.html" style="font-size: 24px; font-weight: bold; color: #3b82f6; text-decoration: none;">ShopNova</a>
+    <nav style="display: flex; align-items: center; gap: 25px;">
+      <a href="index.html" style="color: #fff; text-decoration: none; font-size: 15px; font-weight: 500;">Home</a>
+      <a href="index.html" style="color: #fff; text-decoration: none; font-size: 15px; font-weight: 500;">Products</a>
+      <a href="cart.html" style="color: #fff; text-decoration: none; font-size: 15px; font-weight: 500;">Cart 🛒</a>
     </nav>
   </header>
 
-  <!-- Main View Workspace Wrapper -->
-  <main class="cart-wrapper">
+  <!-- Two-Column Workspace Container -->
+  <main style="max-width: 1200px; margin: 40px auto; padding: 0 20px; display: flex; gap: 30px; flex-wrap: wrap;">
 
     <!-- Left Column: Products Listing View -->
-    <section class="cart-items-section">
-      <div class="cart-card">
-        <div class="item-thumbnail">
-          <!-- Item image layout reference -->
-          <img src="https://unsplash.com" alt="Premium Laptop">
+    <section style="flex: 2; min-width: 320px;">
+      <div style="background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e5e7eb; display: flex; gap: 20px; align-items: center;">
+        
+        <!-- FIXED LAPTOP CART IMAGE -->
+        <div style="width: 110px; height: 110px; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb; background-color: #f3f4f6;">
+          <img src="https://unsplash.com" alt="Premium Laptop" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div class="item-details">
-          <h2 class="item-title">Premium Laptop</h2>
-          <div class="item-price">₹79,999</div>
+        
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+          <h2 style="font-size: 18px; font-weight: 700; color: #111827;">Premium Laptop</h2>
+          <div style="font-size: 16px; font-weight: 600; color: #059669;">₹79,999</div>
           
-          <!-- Structured Action Counter Row Controls -->
-          <div class="item-controls">
-            <button class="qty-btn">-</button>
-            <span class="qty-number">1</span>
-            <button class="qty-btn">+</button>
-            <button class="remove-btn">Remove</button>
+          <!-- Counter Controls -->
+          <div style="display: flex; align-items: center; gap: 15px; margin-top: 4px;">
+            <button style="width: 28px; height: 28px; border: 1px solid #d1d5db; background: #fff; border-radius: 4px; cursor: pointer; font-weight: bold;">-</button>
+            <span style="font-size: 14px; font-weight: 600;">1</span>
+            <button style="width: 28px; height: 28px; border: 1px solid #d1d5db; background: #fff; border-radius: 4px; cursor: pointer; font-weight: bold;">+</button>
+            <button style="background: none; border: none; color: #ef4444; font-size: 13px; font-weight: 600; cursor: pointer;">Remove</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Right Column: Premium Price Breakdown Receipt Section -->
-    <section class="summary-section">
-      <div class="summary-card">
-        <h3 class="summary-title">Price Details</h3>
+    <!-- Right Column: Balance Calculator Panel -->
+    <section style="flex: 1; min-width: 300px;">
+      <div style="background: #ffffff; border-radius: 12px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e5e7eb;">
+        <h3 style="font-size: 18px; font-weight: 700; padding-bottom: 15px; border-bottom: 1px solid #f3f4f6; margin-bottom: 15px; color: #111827;">Price Details</h3>
         
-        <div class="summary-row">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; color: #4b5563;">
           <span>Price (1 item)</span>
           <span>₹79,999</span>
         </div>
         
-        <div class="summary-row">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; color: #4b5563;">
           <span>Delivery Charges</span>
-          <span class="free-delivery">FREE</span>
+          <span style="color: #059669; font-weight: 600;">FREE</span>
         </div>
         
-        <div class="total-row">
+        <div style="display: flex; justify-content: space-between; margin-top: 15px; padding-top: 15px; border-top: 1px solid #f3f4f6; font-size: 18px; font-weight: 700; color: #111827;">
           <span>Total Amount</span>
           <span>₹79,999</span>
         </div>
 
-        <button class="checkout-btn">Proceed to Checkout 🔒</button>
+        <button style="display: block; width: 100%; background-color: #ff9900; color: #ffffff; text-align: center; padding: 14px; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; margin-top: 20px;">Proceed to Checkout 🔒</button>
       </div>
     </section>
 
