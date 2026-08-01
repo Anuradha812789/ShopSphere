@@ -1,89 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopNova</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category Navigation</title>
+  <style>
+    /* Reset styles for consistency */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
+    /* Container for the entire list */
+    .menu-list {
+      display: flex;
+      flex-direction: column; /* Stacks rows vertically */
+      gap: 20px;              /* Spacing between different categories */
+      padding: 20px;
+    }
+
+    /* Target individual rows */
+    .category-item {
+      display: flex;          /* Activates flexbox */
+      flex-direction: row;    /* Forces icon and text side-by-side */
+      align-items: center;    /* Vertically aligns icon and text centers */
+      gap: 12px;              /* Space between the icon and the text */
+    }
+
+    /* Style the text labels */
+    .category-text {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    /* Optional styling for your icon images */
+    .category-item img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+  </style>
+</head>
 <body>
 
-<header>
+  <div class="menu-list">
 
-    <div class="logo">ShopNova</div>
-
-    <input type="text"
-           class="search-box"
-           placeholder="Search products...">
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart 🛒</a>
-        <a href="login.html">Login</a>
-    </nav>
-
-</header>
-
-
-<section class="hero">
-
-    <h1>Explore Premium Products</h1>
-
-    <p>Next Generation E-Commerce Platform</p>
-
-</section>
-
-
-<section class="categories">
-
-    <div class="category-card">
-        <div class="icon">💻</div>
-        <h3>Electronics</h3>
+    <!-- Electronics -->
+    <div class="category-item">
+      <img src="https://placehold.co💻" alt="Electronics">
+      <span class="category-text">Electronics</span>
     </div>
 
-    <div class="category-card">
-        <div class="icon">👕</div>
-        <h3>Fashion</h3>
+    <!-- Fashion -->
+    <div class="category-item">
+      <img src="https://placehold.co👕" alt="Fashion">
+      <span class="category-text">Fashion</span>
     </div>
 
-    <div class="category-card">
-        <div class="icon">📱</div>
-        <h3>Mobiles</h3>
+    <!-- Mobiles -->
+    <div class="category-item">
+      <img src="https://placehold.co📱" alt="Mobiles">
+      <span class="category-text">Mobiles</span>
     </div>
 
-    <div class="category-card">
-        <div class="icon">🎮</div>
-        <h3>Gaming</h3>
+    <!-- Gaming -->
+    <div class="category-item">
+      <img src="https://placehold.co🎮" alt="Gaming">
+      <span class="category-text">Gaming</span>
     </div>
 
-</section>
-
-
-<footer>
-
-    <h3>ShopNova</h3>
-
-    <p>Next Generation E-Commerce Platform</p>
-
-    <p style="margin-top:10px;">
-        Founded & Designed by
-        <strong>Anuradha</strong>
-    </p>
-
-    <p style="font-size:14px;">
-        CEO & Founder
-    </p>
-
-    <br>
-
-    © 2026 ShopNova. All Rights Reserved.
-
-</footer>
-
+  </div>
 
 </body>
 </html>
-
