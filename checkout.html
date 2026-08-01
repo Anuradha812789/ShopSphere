@@ -2,142 +2,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - ShopNova Pro</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #dbeafe, #eff6ff, #e0f2fe);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .checkout-box {
-      width: 100%;
-      max-width: 500px;
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      text-align: center;
-      color: #2563eb;
-      margin-bottom: 25px;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      font-size: 15px;
-      outline: none;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: #2563eb;
-    }
-
-    textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .place-btn {
-      background: #2563eb;
-      color: white;
-    }
-
-    .place-btn:hover {
-      background: #1d4ed8;
-    }
-
-    .home-btn {
-      background: #0ea5e9;
-      color: white;
-    }
-
-    .home-btn:hover {
-      background: #0284c7;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNova Payment</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="checkout-box">
-    <h1>💳 Secure Checkout</h1>
+<header>
+    <div class="logo">ShopNova</div>
+</header>
 
-    <input type="text" id="name" placeholder="👤 Full Name">
+<section class="product-page">
 
-    <input type="text" id="mobile" placeholder="📱 Mobile Number">
+    <div class="product-info" style="width:100%;">
 
-    <textarea id="address" placeholder="🏠 Delivery Address"></textarea>
+        <h1>Complete Your Payment</h1>
 
-    <select id="payment">
-      <option>💵 Cash on Delivery</option>
-      <option>📲 UPI Payment</option>
-      <option>💳 Credit / Debit Card</option>
-    </select>
+        <h2>₹89,999</h2>
 
-    <button class="btn place-btn" onclick="placeOrder()">
-      🚀 Place Order
-    </button>
+        <p>Choose your preferred UPI payment app:</p>
 
-    <a href="https://anuradha812789.github.io/ShopSphere/" class="btn home-btn">
-      🏠 Return to Home
-    </a>
-  </div>
+        <div class="buttons" style="flex-wrap:wrap;">
 
-  <script>
-    function placeOrder() {
-      const name = document.getElementById("name").value.trim();
-      const mobile = document.getElementById("mobile").value.trim();
-      const address = document.getElementById("address").value.trim();
+            <a href="upi://pay?pa=yourupi@oksbi&pn=ShopNova&am=89999"
+               class="buy-btn"
+               style="text-decoration:none;display:inline-block;text-align:center;">
+               Google Pay
+            </a>
 
-      if (!name || !mobile || !address) {
-        alert("⚠️ Please fill all details before placing the order.");
-        return;
-      }
+            <a href="upi://pay?pa=yourupi@oksbi&pn=ShopNova&am=89999"
+               class="buy-btn"
+               style="text-decoration:none;display:inline-block;text-align:center;">
+               PhonePe
+            </a>
 
-      // Clear cart
-      localStorage.removeItem("shopnovaCart");
+            <a href="upi://pay?pa=yourupi@oksbi&pn=ShopNova&am=89999"
+               class="buy-btn"
+               style="text-decoration:none;display:inline-block;text-align:center;">
+               Paytm
+            </a>
 
-      alert("🎉 Order placed successfully! Thank you for shopping with ShopNova 💙");
+        </div>
 
-      // Go back to homepage
-      window.location.href = "https://anuradha812789.github.io/ShopSphere/";
-    }
-  </script>
+        <p style="margin-top:25px;font-size:14px;color:#555;">
+            Replace <strong>yourupi@oksbi</strong> with your real UPI ID.
+        </p>
+
+    </div>
+
+</section>
 
 </body>
 </html>
-```
+
