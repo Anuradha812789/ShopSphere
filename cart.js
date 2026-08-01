@@ -1,100 +1,77 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopNova Cart</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+// ===============================
+// SHOPNOVA CART SYSTEM
+// ===============================
 
-<body>
+function addToCart() {
 
-<header>
-    <div class="logo">ShopNova</div>
+    // Save product in browser storage
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart 🛒</a>
-    </nav>
-</header>
+    const product = {
+        name: "Premium Laptop",
+        price: 89999,
+        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80"
+    };
 
+    localStorage.setItem("shopnova_cart", JSON.stringify(product));
 
-<main class="cart-container">
+    // Success message
 
-    <section class="cart-items">
+    alert("✅ Product added successfully to cart!");
 
-        <div class="cart-product">
+    // Open cart page
 
-            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80"
-                 alt="Premium Laptop">
-
-            <div class="product-details">
-
-                <h2>Premium Laptop</h2>
-
-                <p class="price">₹89,999</p>
-
-                <p>Quantity: 1</p>
-
-                <button class="cart-btn">Remove</button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <aside class="price-summary">
-
-        <h2>Price Details</h2>
-
-        <div class="summary-row">
-            <span>Price</span>
-            <span>₹89,999</span>
-        </div>
-
-        <div class="summary-row">
-            <span>Delivery</span>
-            <span style="color:#16a34a;font-weight:bold;">FREE</span>
-        </div>
-
-        <hr style="margin:20px 0;">
-
-        <div class="summary-row" style="font-weight:bold;font-size:20px;">
-            <span>Total Amount</span>
-            <span>₹89,999</span>
-        </div>
-
-        <button class="checkout-btn" onclick="goToPayment()">
-            Proceed to Pay 💳
-        </button>
-
-    </aside>
-
-</main>
-
-
-<footer>
-    <h3>ShopNova</h3>
-    <p>Next Generation E-Commerce Platform</p>
-    <p style="margin-top:10px;">
-        Founded & Designed by <strong>Anuradha</strong>
-    </p>
-    <p style="font-size:14px;">CEO & Founder</p>
-    <br>
-    © 2026 ShopNova. All Rights Reserved.
-</footer>
-
-<script>
-function goToPayment(){
-    window.location.href = "checkout.html";
+    window.location.href = "cart.html";
 }
-</script>
 
-</body>
-</html>
+
+
+// ===============================
+// LOAD CART DATA
+// ===============================
+
+function loadCart() {
+
+    const data = localStorage.getItem("shopnova_cart");
+
+    if (!data) return;
+
+    const product = JSON.parse(data);
+
+    const nameEl = document.getElementById("cart-name");
+    const priceEl = document.getElementById("cart-price");
+    const totalEl = document.getElementById("cart-total");
+    const imageEl = document.getElementById("cart-image");
+
+    if (nameEl) nameEl.textContent = product.name;
+
+    if (priceEl) priceEl.textContent = "₹" + product.price.toLocaleString();
+
+    if (totalEl) totalEl.textContent = "₹" + product.price.toLocaleString();
+
+    if (imageEl) imageEl.src = product.image;
+}
+
+
+
+// ===============================
+// REMOVE ITEM
+// ===============================
+
+function removeItem() {
+
+    localStorage.removeItem("shopnova_cart");
+
+    alert("🗑️ Item removed from cart");
+
+    window.location.reload();
+}
+
+
+
+// ===============================
+// AUTO LOAD
+// ===============================
+
+window.onload = loadCart;
 
