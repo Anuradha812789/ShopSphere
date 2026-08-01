@@ -42,7 +42,7 @@
       text-decoration:none;
     }
 
-    /* BIG SEARCH BAR */
+    /* SEARCH BAR */
 
     .search-container{
       flex:1;
@@ -93,7 +93,7 @@
 
     .section-title{
       text-align:center;
-      font-size:40px;
+      font-size:42px;
       margin-bottom:50px;
       color:#0b1a30;
     }
@@ -112,6 +112,7 @@
       overflow:hidden;
       box-shadow:0 4px 15px rgba(0,0,0,0.08);
       transition:0.3s;
+      border:1px solid #e5e7eb;
     }
 
     .product-card:hover{
@@ -185,7 +186,7 @@
       background:#e68a00;
     }
 
-    /* CONTACT BUTTON */
+    /* CONTACT SECTION */
 
     .contact-section{
       background:#f8fafc;
@@ -222,7 +223,7 @@
 
     .wa{ background:#25d366; }
     .ig{ background:#e1306c; }
-    .fb{ background:#1877f2; }
+    .yt{ background:#ff0000; }
 
     /* FOOTER */
 
@@ -233,6 +234,8 @@
       padding:25px;
       margin-top:60px;
     }
+
+    /* MOBILE */
 
     @media(max-width:768px){
 
@@ -250,10 +253,13 @@
         flex-wrap:wrap;
         justify-content:center;
       }
+
+      .section-title{
+        font-size:34px;
+      }
     }
 
   </style>
-
 </head>
 
 <body>
@@ -283,6 +289,7 @@
 
   <div class="product-grid">
 
+    <!-- PRODUCT 1 -->
     <div class="product-card">
 
       <div class="product-image-wrapper">
@@ -328,9 +335,9 @@
              class="social-btn ig"
              target="_blank">IG</a>
 
-          <a href="https://facebook.com"
-             class="social-btn fb"
-             target="_blank">FB</a>
+          <a href="https://youtube.com"
+             class="social-btn yt"
+             target="_blank">YT</a>
 
         </div>
 
@@ -340,11 +347,12 @@
 
 
 
+    <!-- PRODUCT 2 -->
     <div class="product-card">
 
       <div class="product-image-wrapper">
 
-        <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+        <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=900&q=80"
              alt="Studio Wireless Headphones">
 
       </div>
@@ -385,9 +393,9 @@
              class="social-btn ig"
              target="_blank">IG</a>
 
-          <a href="https://facebook.com"
-             class="social-btn fb"
-             target="_blank">FB</a>
+          <a href="https://youtube.com"
+             class="social-btn yt"
+             target="_blank">YT</a>
 
         </div>
 
@@ -433,4 +441,4 @@ function addToCart(name, price){
 
 </body>
 </html>
-```
+
