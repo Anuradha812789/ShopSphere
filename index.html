@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopNova Home</title>
+    <title>ShopNova</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,17 +18,15 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
+        <a href="cart.html">Cart 🛒</a>
         <a href="login.html">Login</a>
     </nav>
 </header>
-
 
 <section class="hero">
     <h1>Explore Premium Products</h1>
     <p>Next Generation E-Commerce Platform</p>
 </section>
-
 
 <section class="categories">
 
@@ -54,13 +52,35 @@
 
 </section>
 
-
 <footer>
     <h3>ShopNova</h3>
     <p>Next Generation E-Commerce Platform</p>
+    <p style="margin-top:10px;">
+        Founded & Designed by <strong>Anuradha</strong>
+    </p>
+    <p style="font-size:14px;">CEO & Founder</p>
     <br>
-    © 2026 All Rights Reserved
+    © 2026 ShopNova. All Rights Reserved.
 </footer>
+
+<div class="contact-float">
+    <button id="contactToggle">💬</button>
+
+    <div class="contact-menu" id="contactMenu">
+        <a href="https://wa.me/919999999999" target="_blank">📱 WhatsApp</a>
+        <a href="https://instagram.com/anuradha" target="_blank">📸 Instagram</a>
+        <a href="https://youtube.com/@anuradha" target="_blank">▶️ YouTube</a>
+    </div>
+</div>
+
+<script>
+const toggle = document.getElementById("contactToggle");
+const menu = document.getElementById("contactMenu");
+
+toggle.onclick = () => {
+    menu.classList.toggle("show-menu");
+};
+</script>
 
 </body>
 </html>
