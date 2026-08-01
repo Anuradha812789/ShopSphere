@@ -3,76 +3,308 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Category Navigation</title>
+  <title>ShopNova - Products</title>
   <style>
-    /* Reset styles for consistency */
+    /* Global Reset & Typography */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* Container for the entire list */
-    .menu-list {
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    header {
+      background-color: #0b1a30;
+      color: #fff;
       display: flex;
-      flex-direction: column; /* Stacks rows vertically */
-      gap: 20px;              /* Spacing between different categories */
-      padding: 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
     }
 
-    /* Target individual rows */
-    .category-item {
-      display: flex;          /* Activates flexbox */
-      flex-direction: row;    /* Forces icon and text side-by-side */
-      align-items: center;    /* Vertically aligns icon and text centers */
-      gap: 12px;              /* Space between the icon and the text */
-    }
-
-    /* Style the text labels */
-    .category-text {
-      font-size: 16px;
+    .logo {
+      font-size: 24px;
       font-weight: bold;
-      color: #000000;
+      color: #3b82f6;
     }
 
-    /* Optional styling for your icon images */
-    .category-item img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #3b82f6;
+    }
+
+    /* Main Content Wrapper */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #0b1a30;
+    }
+
+    /* Product Grid Container */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    /* Product Card with Medium Sizing */
+    .product-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Restricting image size so it stays medium and well-proportioned */
+    .product-image-wrapper {
+      width: 100%;
+      height: 220px; 
+      overflow: hidden;
+      background-color: #eaeaea;
+    }
+
+    .product-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+    }
+
+    /* Details styling at the bottom of the card */
+    .product-details {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1f2937;
+    }
+
+    .product-price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #059669;
+      margin-bottom: 15px;
+      margin-top: auto; /* Pushes price details to the very bottom */
+    }
+
+    .buy-btn {
+      width: 100%;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .buy-btn:hover {
+      background-color: #2563eb;
+    }
+
+    /* Unified Contact/Social Floating Trigger Button */
+    .contact-trigger-btn {
+      display: block;
+      width: fit-content;
+      margin: 40px auto;
+      background-color: #0b1a30;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    /* Social Icons Panel inside Footer */
+    .footer-content {
+      background-color: #0b1a30;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .social-icon {
+      color: #fff;
+      background: #1e293b;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .social-icon:hover {
+      background: #3b82f6;
+    }
+
+    /* Payment Container Mockup */
+    .payment-section {
+      background: #fff;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+      border: 1px solid #e5e7eb;
+    }
+
+    .payment-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1f2937;
+    }
+
+    .qr-placeholder {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 15px auto;
+      border: 2px solid #e5e7eb;
+      padding: 10px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-placeholder img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .upi-id {
+      font-size: 14px;
+      background: #f3f4f6;
+      padding: 8px;
+      border-radius: 4px;
+      color: #4b5563;
+      word-break: break-all;
     }
   </style>
 </head>
 <body>
 
-  <div class="menu-list">
+  <!-- Top Navbar Header -->
+  <header>
+    <div class="logo">ShopNova</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#cart">Cart 🛒</a>
+    </nav>
+  </header>
 
-    <!-- Electronics -->
-    <div class="category-item">
-      <img src="https://placehold.co💻" alt="Electronics">
-      <span class="category-text">Electronics</span>
+  <main>
+    <h1 class="section-title">Our Products</h1>
+
+    <!-- Medium Sized Product Grid Layout -->
+    <div class="product-grid">
+      
+      <!-- Product Item Card -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <!-- Uses your desk setup reference image scaled cleanly -->
+          <img src="https://unsplash.com" alt="Product Layout">
+        </div>
+        <div class="product-details">
+          <h2 class="product-name">Premium Workstation Desk Pack</h2>
+          <!-- Price details positioned cleanly at the bottom -->
+          <div class="product-price">₹12,499.00</div>
+          <button class="buy-btn" onclick="scrollToPayment()">Buy via UPI Scan</button>
+        </div>
+      </div>
+
+      <!-- Duplicate Example Card 2 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="https://unsplash.com" alt="Headphones">
+        </div>
+        <div class="product-details">
+          <h2 class="product-name">Studio Wireless Headphones</h2>
+          <div class="product-price">₹4,999.00</div>
+          <button class="buy-btn" onclick="scrollToPayment()">Buy via UPI Scan</button>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Fashion -->
-    <div class="category-item">
-      <img src="https://placehold.co👕" alt="Fashion">
-      <span class="category-text">Fashion</span>
-    </div>
+    <!-- Contact Navigation Action Button -->
+    <a href="#contact-footer" class="contact-trigger-btn">Connect With Our Team</a>
 
-    <!-- Mobiles -->
-    <div class="category-item">
-      <img src="https://placehold.co📱" alt="Mobiles">
-      <span class="category-text">Mobiles</span>
+    <!-- Integrated UPI Scanner Billing Section -->
+    <div id="payment-gate" class="payment-section">
+      <h3 class="payment-title">Scan QR Code to Pay via UPI</h3>
+      <div class="qr-placeholder">
+        <!-- Replace this source URL with your specific generated UPI QR merchant image asset -->
+        <img src="https://qrserver.com" alt="UPI Merchant QR Code">
+      </div>
+      <p class="upi-id">Merchant ID: <strong>shopnova@upi</strong></p>
     </div>
+  </main>
 
-    <!-- Gaming -->
-    <div class="category-item">
-      <img src="https://placehold.co🎮" alt="Gaming">
-      <span class="category-text">Gaming</span>
+  <!-- Footer with unified Social Media Channels -->
+  <footer id="contact-footer" class="footer-content">
+    <p>© 2026 ShopNova Store. All rights reserved.</p>
+    <p style="margin-top: 10px; font-size: 14px; color: #94a3b8;">Contact us directly via our social links:</p>
+    <div class="social-links">
+      <a href="https://wa.me" class="social-icon" target="_blank" title="WhatsApp">WA</a>
+      <a href="https://instagram.com" class="social-icon" target="_blank" title="Instagram">IG</a>
+      <a href="https://facebook.com" class="social-icon" target="_blank" title="Facebook">FB</a>
+      <a href="https://twitter.com" class="social-icon" target="_blank" title="Twitter">X</a>
     </div>
+  </footer>
 
-  </div>
+  <script>
+    // Smooth navigation helper down to checkout scanner component
+    function scrollToPayment() {
+      document.getElementById('payment-gate').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
