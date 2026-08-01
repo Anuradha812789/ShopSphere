@@ -1,31 +1,62 @@
-```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNova Premium Laptop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ShopNova</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart 🛒</a>
+    </nav>
+</header>
+
+
 <section class="product-page">
 
     <div class="product-image">
-        <img src="your-laptop-image.jpg" alt="ShopNova Premium Laptop">
+
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80"
+             alt="ShopNova Premium Laptop">
+
     </div>
+
+
 
     <div class="product-info">
 
         <h1>ShopNova Premium Laptop</h1>
 
-        <div class="rating">⭐⭐⭐⭐⭐ 4.8/5</div>
+        <div class="rating">
+            ⭐⭐⭐⭐⭐ <span>4.8/5</span>
+        </div>
 
-        <h2>₹79,999</h2>
+        <h2>₹89,999</h2>
 
         <p>
             Premium laptop for coding, gaming, office work and professional use.
+            Powerful performance with modern design and long battery life.
         </p>
 
         <ul>
             <li>🚀 Intel Core i7 14th Gen</li>
             <li>⚡ 16GB RAM</li>
             <li>💾 1TB SSD</li>
-            <li>🖥️ 15.6 inch Display</li>
+            <li>🖥️ 15.6-inch Full HD Display</li>
             <li>🔋 Long Battery Backup</li>
         </ul>
 
         <div class="buttons">
+
             <button class="cart-btn" onclick="addToCart()">
                 Add To Cart 🛒
             </button>
@@ -33,9 +64,16 @@
             <button class="buy-btn">
                 Buy Now ⚡
             </button>
+
         </div>
 
     </div>
 
 </section>
+
+
+<script src="cart.js"></script>
+
+</body>
+</html>
 ```
