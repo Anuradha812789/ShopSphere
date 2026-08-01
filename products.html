@@ -27,16 +27,56 @@
 <section class="product-grid">
 
     <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80" alt="Laptop">
+
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80"
+             alt="Premium Laptop">
 
         <h3>Premium Laptop</h3>
 
         <p class="price">₹89,999</p>
 
         <a href="laptop.html">View Product</a>
+
     </div>
 
 </section>
+
+
+<footer>
+    <h3>ShopNova</h3>
+    <p>Next Generation E-Commerce Platform</p>
+    <p style="margin-top:10px;">
+        Founded & Designed by <strong>Anuradha</strong>
+    </p>
+    <p style="font-size:14px;">CEO & Founder</p>
+    <br>
+    © 2026 ShopNova. All Rights Reserved.
+</footer>
+
+<div class="contact-float">
+
+    <button id="contactToggle">💬</button>
+
+    <div class="contact-menu" id="contactMenu">
+
+        <a href="https://wa.me/919999999999" target="_blank">📱 WhatsApp</a>
+
+        <a href="https://instagram.com/anuradha" target="_blank">📸 Instagram</a>
+
+        <a href="https://youtube.com/@anuradha" target="_blank">▶️ YouTube</a>
+
+    </div>
+
+</div>
+
+<script>
+const toggle = document.getElementById("contactToggle");
+const menu = document.getElementById("contactMenu");
+
+toggle.onclick = () => {
+    menu.classList.toggle("show-menu");
+};
+</script>
 
 </body>
 </html>
