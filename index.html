@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShopNova - Home</title>
 </head>
-<body style="margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333;">
+<body style="margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333;">
 
-  <!-- NAVBAR: High-Visibility Bright White Search Bar -->
+  <!-- FIXED NAVBAR: High-Contrast White Search Bar -->
   <header style="background-color: #0b1a30; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
     <a href="index.html" style="font-size: 24px; font-weight: bold; color: #3b82f6; text-decoration: none;">ShopNova</a>
     
-    <!-- White search box background so text is perfectly readable -->
+    <!-- White search box so users can easily see it -->
     <div style="flex: 0 1 400px; margin: 0 20px; display: flex;">
-      <input type="text" placeholder="Search for products, brands and more..." style="width: 100%; padding: 10px 15px; border: 1px solid #cbd5e1; border-radius: 20px; background-color: #ffffff; color: #0f172a; font-size: 14px; outline: none; box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);">
+      <input type="text" placeholder="Search for products, brands..." style="width: 100%; padding: 10px 15px; border: 1px solid #cbd5e1; border-radius: 20px; background-color: #ffffff; color: #0f172a; font-size: 14px; outline: none;">
     </div>
 
     <nav style="display: flex; align-items: center; gap: 25px;">
@@ -23,17 +23,17 @@
     </nav>
   </header>
 
-  <!-- PRODUCTS GRID GRID -->
+  <!-- PRODUCTS GRID -->
   <main style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
     <h1 style="text-align: center; font-size: 32px; margin-bottom: 40px; color: #0b1a30; font-weight: 700;">Explore Premium Products</h1>
 
-    <!-- Medium Sized Flex-Grid Layout constraints -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 360px)); gap: 30px; justify-content: center; margin-bottom: 50px;">
       
-      <!-- Product Card 1: Premium Laptop -->
+      <!-- Product 1: Premium Laptop -->
       <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: flex; flex-direction: column;">
         <div style="width: 100%; height: 240px; overflow: hidden; background-color: #f3f4f6;">
-          <img src="https://unsplash.com" alt="Premium Workstation Laptop" style="width: 100%; height: 100%; object-fit: cover;">
+          <!-- Using a fresh, hyper-reliable direct image link -->
+          <img src="https://picsum.photos" alt="Premium Laptop" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
           <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #1f2937;">Premium Workstation Laptop</h2>
@@ -45,20 +45,21 @@
           </div>
         </div>
         
-        <!-- Quick Connect Triggers Row -->
+        <!-- UPDATED CONTACT BUTTON SECTION INSIDE CARD -->
         <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;">
           <span style="font-size: 13px; font-weight: 600; color: #64748b;">Quick Connect:</span>
           <div style="display: flex; gap: 8px;">
-            <a href="https://wa.me" target="_blank" style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 13px; font-weight: bold; background-color: #25d366;">WA</a>
-            <a href="https://instagram.com/" target="_blank" style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 13px; font-weight: bold; background-color: #e1306c;">IG</a>
+            <a href="https://wa.me" target="_blank" style="width: 40px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 13px; font-weight: bold; background-color: #25d366; padding: 0 5px;">WhatsApp</a>
+            <a href="https://instagram.com" target="_blank" style="width: 40px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 13px; font-weight: bold; background-color: #e1306c; padding: 0 5px;">Insta</a>
           </div>
         </div>
       </div>
 
-      <!-- Product Card 2: Studio Headphones -->
+      <!-- Product 2: Studio Headphones -->
       <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; display: flex; flex-direction: column;">
         <div style="width: 100%; height: 240px; overflow: hidden; background-color: #f3f4f6;">
-          <img src="https://unsplash.com" alt="Studio Wireless Headphones" style="width: 100%; height: 100%; object-fit: cover;">
+          <!-- Using a fresh, hyper-reliable direct image link -->
+          <img src="https://picsum.photos" alt="Studio Headphones" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
           <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #1f2937;">Studio Wireless Headphones</h2>
@@ -70,12 +71,12 @@
           </div>
         </div>
         
-        <!-- Quick Connect Triggers Row -->
+        <!-- UPDATED CONTACT BUTTON SECTION INSIDE CARD -->
         <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;">
           <span style="font-size: 13px; font-weight: 600; color: #64748b;">Quick Connect:</span>
           <div style="display: flex; gap: 8px;">
-            <a href="https://wa.me" target="_blank" style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 13px; font-weight: bold; background-color: #25d366;">WA</a>
-            <a href="https://instagram.com/" target="_blank" style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 13px; font-weight: bold; background-color: #e1306c;">IG</a>
+            <a href="https://wa.me" target="_blank" style="width: 40px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 13px; font-weight: bold; background-color: #25d366; padding: 0 5px;">WhatsApp</a>
+            <a href="https://instagram.com" target="_blank" style="width: 40px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 13px; font-weight: bold; background-color: #e1306c; padding: 0 5px;">Insta</a>
           </div>
         </div>
       </div>
