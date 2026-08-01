@@ -1,6 +1,6 @@
 
 /* ===============================
-   GLOBAL RESET
+   SHOPNOVA FULL STYLE
 ================================ */
 
 *{
@@ -15,9 +15,7 @@ body{
     color:#111827;
 }
 
-/* ===============================
-   HEADER
-================================ */
+/* ===== HEADER ===== */
 
 header{
     background:#0f172a;
@@ -56,9 +54,7 @@ nav a:hover{
     color:#38bdf8;
 }
 
-/* ===============================
-   HERO SECTION
-================================ */
+/* ===== HERO ===== */
 
 .hero{
     text-align:center;
@@ -75,9 +71,7 @@ nav a:hover{
     color:#4b5563;
 }
 
-/* ===============================
-   CATEGORY SECTION
-================================ */
+/* ===== CATEGORIES ===== */
 
 .categories{
     width:90%;
@@ -94,11 +88,6 @@ nav a:hover{
     border-radius:16px;
     text-align:center;
     box-shadow:0 4px 15px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.category-card:hover{
-    transform:translateY(-6px);
 }
 
 .category-card .icon{
@@ -106,13 +95,7 @@ nav a:hover{
     margin-bottom:15px;
 }
 
-.category-card h3{
-    font-size:24px;
-}
-
-/* ===============================
-   PRODUCTS PAGE
-================================ */
+/* ===== PRODUCTS ===== */
 
 .product-grid{
     width:90%;
@@ -138,15 +121,11 @@ nav a:hover{
     border-radius:12px;
 }
 
-.product-card h3{
-    margin:15px 0;
-}
-
 .product-card .price{
     color:#16a34a;
     font-size:24px;
     font-weight:bold;
-    margin-bottom:15px;
+    margin:12px 0;
 }
 
 .product-card a{
@@ -158,9 +137,7 @@ nav a:hover{
     text-decoration:none;
 }
 
-/* ===============================
-   PRODUCT DETAILS PAGE
-================================ */
+/* ===== PRODUCT PAGE ===== */
 
 .product-page{
     width:90%;
@@ -251,17 +228,15 @@ nav a:hover{
     color:white;
 }
 
-/* ===============================
-   CART PAGE
-================================ */
+/* ===== AMAZON STYLE CART ===== */
 
 .cart-container{
-    width:90%;
-    max-width:1200px;
-    margin:40px auto;
+    width:95%;
+    max-width:1400px;
+    margin:30px auto;
     display:grid;
     grid-template-columns:2fr 1fr;
-    gap:25px;
+    gap:20px;
 }
 
 .cart-items,
@@ -298,9 +273,51 @@ nav a:hover{
     cursor:pointer;
 }
 
-/* ===============================
-   FOOTER
-================================ */
+/* ===== FLOATING CONTACT ===== */
+
+.contact-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    z-index:999;
+}
+
+.contact-float button{
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.contact-menu{
+    position:absolute;
+    bottom:75px;
+    right:0;
+    display:none;
+    flex-direction:column;
+    gap:10px;
+}
+
+.contact-menu a{
+    background:white;
+    color:#111827;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+    font-weight:600;
+    min-width:170px;
+}
+
+.show-menu{
+    display:flex;
+}
+
+/* ===== FOOTER ===== */
 
 footer{
     background:#0f172a;
@@ -310,9 +327,7 @@ footer{
     margin-top:50px;
 }
 
-/* ===============================
-   MOBILE RESPONSIVE
-================================ */
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
@@ -341,6 +356,10 @@ footer{
     .cart-product{
         flex-direction:column;
         text-align:center;
+    }
+
+    .buttons{
+        flex-direction:column;
     }
 }
 
