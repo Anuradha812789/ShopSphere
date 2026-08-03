@@ -1,79 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopNova Products</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNova - Products</title>
+    <style>
+        :root { --primary: #0f172a; --accent: #d97706; --bg-light: #f8fafc; --text-dark: #334155; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); padding-bottom: 80px; }
+        header { background-color: var(--primary); color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        header h1 { margin: 0; font-size: 24px; font-weight: 700; }
+        nav { display: flex; gap: 25px; }
+        nav a { color: white; text-decoration: none; font-weight: 600; font-size: 16px; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        h2 { color: var(--primary); font-size: 32px; margin-bottom: 35px; font-weight: 700; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-content: center; }
+        .product-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); text-align: left; }
+        .image-placeholder-box {
+            width: 100%; height: 180px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; font-weight: 700; margin-bottom: 15px; border-bottom: 3px solid var(--accent);
+        }
+        .product-card h3 { font-size: 19px; margin: 0 0 5px 0; color: #1e293b; font-weight: 700; }
+        .product-card .price { font-weight: bold; color: var(--accent); font-size: 18px; margin-bottom: 8px; }
+        .product-card .desc { font-size: 13px; color: #64748b; height: 40px; margin-bottom: 20px; line-height: 1.5; overflow: hidden; }
+        .add-btn { width: 100%; background-color: var(--primary); color: white; border: none; padding: 12px; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 14px; }
+        footer { background-color: var(--primary); color: #94a3b8; text-align: center; padding: 25px; margin-top: 60px; font-size: 14px; }
+    </style>
 </head>
-
 <body>
-
-<header>
-  <div class="logo">ShopNova</div>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="cart.html">Cart 🛒</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>Our Products</h1>
-</section>
-
-<section class="product-grid">
-
-  <div class="product-card">
-
-    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80"
-         alt="Premium Laptop">
-
-    <h3>Premium Laptop</h3>
-
-    <p class="price">₹89,999</p>
-
-    <a href="laptop.html">View Product</a>
-
-  </div>
-
-</section>
-
-<footer>
-  <h3>ShopNova</h3>
-  <p>Founded & Designed by <strong>Anuradha</strong></p>
-  <p>CEO & Founder</p>
-  <br>
-  © 2026 ShopNova. All Rights Reserved.
-</footer>
-
-<div class="contact-float">
-
-  <button id="contactToggle">💬</button>
-
-  <div class="contact-menu" id="contactMenu">
-
-    <a href="https://wa.me/919999999999" target="_blank">📱 WhatsApp</a>
-
-    <a href="https://instagram.com/anuradha" target="_blank">📸 Instagram</a>
-
-    <a href="https://youtube.com/@anuradha" target="_blank">▶️ YouTube</a>
-
-  </div>
-
-</div>
-
-<script>
-const toggle = document.getElementById("contactToggle");
-const menu = document.getElementById("contactMenu");
-
-toggle.onclick = () => {
-  menu.classList.toggle("show-menu");
-};
-</script>
-
+    <header>
+        <h1>ShopNova</h1>
+        <nav><a href="index.html">Home</a><a href="products.html">Products</a><a href="cart.html">Cart 🛒</a></nav>
+    </header>
+    <div class="container">
+        <h2>Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="image-placeholder-box">👕</div>
+                <h3>Premium Casual Shirt</h3><div class="price">₹799</div>
+                <div class="desc">Comfortable premium quality cotton shirt tailored for stylish everyday wear.</div>
+                <button class="add-btn" onclick="addToCart('Premium Casual Shirt', 799)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="image-placeholder-box">👟</div>
+                <h3>Sports Running Shoes</h3><div class="price">₹1499</div>
+                <div class="desc">Lightweight athletic running shoes equipped with maximum interior cushion comfort.</div>
+                <button class="add-btn" onclick="addToCart('Sports Running Shoes', 1499)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="image-placeholder-box">⌚</div>
+                <h3>Smart Watch Pro</h3><div class="price">₹2999</div>
+                <div class="desc">Water-resistant digital smartwatch supporting multi-activity fitness tracking indicators.</div>
+                <button class="add-btn" onclick="addToCart('Smart Watch Pro', 2999)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <footer>&copy; 2026 <strong>ShopNova</strong> | CEO & Founder: Anuradha</footer>
+    <script>
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem('shopnova_cart')) || [];
+            cart.push({ name: name, price: price });
+            localStorage.setItem('shopnova_cart', JSON.stringify(cart));
+            alert(name + " successfully added to your cart!");
+        }
+    </script>
 </body>
 </html>
-
